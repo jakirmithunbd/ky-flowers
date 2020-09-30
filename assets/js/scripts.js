@@ -45,10 +45,10 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
     // window.onresize = headersetGutterHeight;
 
      //  Silder
-    $(".sliders").slick({
-        // dots: true,
-        infinite: true,
-        draggable: true,
+    $(".reviews-slider").slick({
+        dots: true,
+        // infinite: true,
+        // draggable: true,
         slidesToShow: 1,
         // autoplay: true,
         slidesToScroll: 1,
