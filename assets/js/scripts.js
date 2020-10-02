@@ -66,6 +66,46 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         ]
     });
 
+    // Product  Silder
+    $(".shop-page-wrapper .products").slick({
+        dots: true,
+        // infinite: true,
+        // draggable: true,
+        slidesToShow: 4,
+        // autoplay: true,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 3,
+                dots: true,
+                arrows: false,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 2,
+                dots: true,
+                arrows: false,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 575,
+              settings: {
+                slidesToShow: 1,
+                dots: true,
+                arrows: false,
+                slidesToScroll: 1
+              }
+            }
+        ]
+    });
+
      // Banner Silder
      $(".home-banner").on("init reInit afterChange", function(event, slick) {
         $(".news__counter").html(

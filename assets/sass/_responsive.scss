@@ -31,6 +31,22 @@
     .follow-us {
         padding: 100px 0;
     }
+
+    .product {
+        margin: 0 10px;
+    }
+
+    .shop-page-wrapper {
+        padding: 60px 0;
+
+        .category-item-wrapper {
+            margin-bottom: 45px;
+
+            .products {
+                padding-bottom: 45px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1025px) {
@@ -503,6 +519,18 @@
 
         .align-center {
             flex-wrap: wrap;
+        }
+    }
+
+    .shop-page-wrapper {
+        padding: 40px 0;
+
+        .category-item-wrapper {
+            margin-bottom: 25px;
+
+            .products {
+                padding-bottom: 30px;
+            }
         }
     }
 
