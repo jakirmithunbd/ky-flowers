@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poly:ital@0;1&family=Prata&display=swap');
+@import url('//fonts.googleapis.com/css2?family=Poly:ital@0;1&family=Prata&family=Poiret+One&display=swap');
 
 /**<==== Fonts variables ====>**/
 $poly: 'Poly', serif;
@@ -329,6 +329,14 @@ button {
 
 .delivery-box {
 
+    .occasions {
+        @include em(48px, 55px);
+        color: #FCF6F6;
+        text-align: center;
+        font-family: 'Poiret One', cursive;
+        font-weight: 400;
+    }
+
     .content {
         position: relative;
         width: 230px;
@@ -337,6 +345,7 @@ button {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        margin: 0 auto;
 
         .text-center {
             width: 146px;
@@ -973,6 +982,7 @@ button {
 .product-category {
     padding: 100px 0;
     @include coverbg();
+    background-attachment: fixed !important;
 
     .category-list {
 
@@ -1454,9 +1464,9 @@ button {
                                 PRODUCT STYLE
 *******************************************************************************/
 .product {
-    margin: 0 20px;
 
     .media {
+        border-radius: 2px;
         position: relative;
 
         img {
@@ -1556,46 +1566,69 @@ button {
 .shop-page-wrapper {
     padding: 100px 0;
 
-    .category-item-wrapper {
-        margin-bottom: 70px;
+    .container {
+        max-width: 1530px;
+    }
 
-        .products {
-            margin: 0 -20px;
-            padding-bottom: 70px;
-        }
+    .shop-sidebar {
 
-        .category-name {
-            font-family: $prata;
-            @include em(24px, 38px);
-            color: #2C241C;
-            margin-bottom: 12px;
-        }
-
-        .see-all {
+        .filter {
             @include em(18px, 28px);
             color: #2C241C;
-            margin-bottom: 30px;
-            display: inline-block;
-            text-decoration: underline;
-            transition: all .3s ease;
+        }
+    }
 
-            &:hover, &:focus {
-                color: $primary;
+    .product-wrapper {
+        border-left: 1px solid #EB9BA2;
+        padding-left: 70px;
+
+        .mobile-filter {
+            margin-bottom: 30px;
+
+            select {
+                width: 100%;
             }
         }
 
-        .slick-dots {
+        .nav {
+            border: 0;
+            margin-bottom: 70px;
 
             li {
 
-                button {
-                    height: 10px;
-                    width: 10px;
+                a {
+                    border: 0;
+                    padding: 0;
+                    @include em(18px, 24px);
+                    color: #6D6C6C;
+                    margin: 0;
+                    font-weight: 400;
+                    font-family: $prata;
+                }
 
-                    &:before {
-                        height: 10px;
-                        width: 10px;
+                &.active {
+
+                    a {
+                        text-decoration: underline;
+                        color: #2C241C;
                     }
+                }
+
+                &:not(:last-child) {
+
+                    a {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+
+            .tab-pane {
+
+                .product {
+                    margin-bottom: 70px;
                 }
             }
         }

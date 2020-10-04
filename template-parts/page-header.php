@@ -1,18 +1,14 @@
 <?php get_header(); ?>
 <?php
-$bg = get_the_post_thumbnail_url(get_the_ID()) ? get_the_post_thumbnail_url(get_the_ID()) : get_theme_file_uri( '/assets/images/page-banner.jpg' ); 
+$bg = get_the_post_thumbnail_url(get_the_ID()) ? get_the_post_thumbnail_url(get_the_ID()) : get_theme_file_uri( '/assets/images/about-banner.jpg' ); 
  
 ?>
-<section class="page-banner">
-    <div class="container-fluid">
-        <div class="row align-center">
-            <div class="col-sm-4 banner-title-wrapper">
-                <div class="text-center text-uppercase page-title"><?php the_title(); ?></div>
-            </div>
-            <div class="col-sm-8 media-wrapper">
-                <div class="media">
-                    <img src="<?php echo $bg; ?>" class="img-responsive" alt="">
-                </div>
+<section class="page-banner" style="background: url(<?php echo $bg; ?>);">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="section-title text-center">
+                <h2 class="wow fadeInUp"><?php echo get_the_title(); ?></h2>
+                <p class="wow fadeInUp"><?php echo get_field('page_header_description'); ?></p>
             </div>
         </div>
     </div>

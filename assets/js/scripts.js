@@ -67,44 +67,44 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
     });
 
     // Product  Silder
-    $(".shop-page-wrapper .products").slick({
-        dots: true,
-        // infinite: true,
-        // draggable: true,
-        slidesToShow: 4,
-        // autoplay: true,
-        slidesToScroll: 1,
-        arrows: false,
-        responsive: [
-            {
-              breakpoint: 1100,
-              settings: {
-                slidesToShow: 3,
-                dots: true,
-                arrows: false,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 900,
-              settings: {
-                slidesToShow: 2,
-                dots: true,
-                arrows: false,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 575,
-              settings: {
-                slidesToShow: 1,
-                dots: true,
-                arrows: false,
-                slidesToScroll: 1
-              }
-            }
-        ]
-    });
+    // $(".shop-page-wrapper .products").slick({
+    //     dots: true,
+    //     // infinite: true,
+    //     // draggable: true,
+    //     slidesToShow: 4,
+    //     // autoplay: true,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     responsive: [
+    //         {
+    //           breakpoint: 1100,
+    //           settings: {
+    //             slidesToShow: 3,
+    //             dots: true,
+    //             arrows: false,
+    //             slidesToScroll: 1
+    //           }
+    //         },
+    //         {
+    //           breakpoint: 900,
+    //           settings: {
+    //             slidesToShow: 2,
+    //             dots: true,
+    //             arrows: false,
+    //             slidesToScroll: 1
+    //           }
+    //         },
+    //         {
+    //           breakpoint: 575,
+    //           settings: {
+    //             slidesToShow: 1,
+    //             dots: true,
+    //             arrows: false,
+    //             slidesToScroll: 1
+    //           }
+    //         }
+    //     ]
+    // });
 
      // Banner Silder
      $(".home-banner").on("init reInit afterChange", function(event, slick) {
@@ -119,7 +119,7 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         infinite: true,
         draggable: true,
         slidesToShow: 1,
-        // autoplay: true,
+        autoplay: true,
         slidesToScroll: 1,
         fade: true,
         arrows: false,
@@ -159,6 +159,20 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
       e.preventDefault();
         $('.search-container').toggleClass('ShowSearch');
     });
+
+    // $('.mobile-filter select').on('change', function(){
+    //     // $('#myTab li').eq($(this).val()).tab('show');
+    //     var $optionSelected = $("option:selected", this);
+    //     $optionSelected.tab('show')
+    //     // var id = $(this).val();
+    //     // $('a[href="' + id + '"]').tab('show');
+    // });
+
+    $('#mySelect').on('change', function (e) {
+      var $optionSelected = $("option:selected", this);
+      $optionSelected.tab('show')
+    });
+
     
 })(jQuery);
 

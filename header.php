@@ -26,37 +26,19 @@
 
     <header class="header">
         <nav class="navbar">
-            <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <div class="navbar-header">
+            <div class="container">
 
-                        <div class="navbar-brand">
-                            <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
-                        </div><!-- / Logo  -->
+                <div class="navbar-header hidden">
+                    <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    <!-- / Logo  -->
 
-                        <a href="#sidr" class="openMenu navbar-toggle collapsed">
-                            <span class="fas fa-bars"></span>
-                        </a>
+                    <a href="#sidr" class="openMenu navbar-toggle collapsed">
+                        <span class="fas fa-bars"></span>
+                    </a>
 
-                    </div>
-                                           
                     <div id="sidr" class="collapse navbar-collapse">
-                        <?php if (function_exists('wp_nav_menu')): ?>
-                            <?php wp_nav_menu( 
-                                  array(
-                                  'menu'               => 'Language Menu',
-                                  'theme_location'     => 'menu-2',
-                                  'depth'              => 3,
-                                  'container'          => 'false',
-                                  'menu_class'         => 'text-right list-unstyle list-inline language-menu',
-                                  'menu_id'            => '',
-                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
-                                  'walker'             => new wp_bootstrap_navwalker()
-                                  ) 
-                                ); 
-                            ?>
-                        <?php endif; ?>
-                        <span class="fas fa-long-arrow-alt-right closeMenu hidden"></span>
+                        <span class="fas fa-long-arrow-alt-right closeMenu"></span>
+
                         <?php if (function_exists('wp_nav_menu')): ?>
                             <?php wp_nav_menu( 
                                   array(
@@ -73,10 +55,70 @@
                             ?>
                         <?php endif; ?>
                     </div>
+
+                </div>
+
+                <div class="navbar-wrapper">
+                                           
+                    <div class="collapse navbar-collapse">
+                        <?php if (function_exists('wp_nav_menu')): ?>
+                            <?php wp_nav_menu( 
+                                  array(
+                                  'menu'               => 'Main Menu',
+                                  'theme_location'     => 'menu-1',
+                                  'depth'              => 3,
+                                  'container'          => 'false',
+                                  'menu_class'         => 'nav navbar-nav',
+                                  'menu_id'            => '',
+                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                  'walker'             => new wp_bootstrap_navwalker()
+                                  ) 
+                                ); 
+                            ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <a class="middle-logo" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    <!-- / Logo  -->
+
+                    <div class="header_right-menu">
+                        <a class="hidden-xs right-items" id="search-icon" href="#"><img src="<?php echo get_theme_file_uri( '/assets/images/search.png' ); ?>" alt=""></a>
+                        <a class="right-items" href="#"><img src="<?php echo get_theme_file_uri( '/assets/images/heart.png' ); ?>" alt=""></a>
+                        <div class="user-area right-items"><img src="<?php echo get_theme_file_uri( '/assets/images/account.png' ); ?>" alt="">
+                            <div class="user-menu">
+                                <?php 
+                                $current_user = wp_get_current_user(); 
+
+                                if ( is_user_logged_in() ) : ?>
+                                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e( 'My Account', 'nor' ); ?></a>
+                                <?php else: ?>
+                                <a href="<?php echo get_permalink( 159 ); ?>"><?php _e( 'Login', 'nor' ); ?></a>
+                                <a href="<?php echo get_permalink( 231 ); ?>"><?php _e( 'Sign Up', 'nor' ); ?></a>
+                                <?php endif;?>
+                            </div>
+                        </div>
+
+                        <div class="shopping_cart">
+                            <a href="" class="ajaxify_cart">
+                                <div class="cart-icon">
+                                    <img src="<?php echo get_theme_file_uri( '/assets/images/cart.png' ); ?>" alt="">
+                                    <div class="count cart_quantity"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></div>
+                                </div>
+                            </a>
+
+                            <div class="header_shopping_cart_content"></div>
+                        </div>
+
+                        <div class="search-container">
+                            <form action="<?php echo site_url(); ?>">
+                                <input type="search" placeholder="Search" name="s">
+                                <button type="submit"><img src="<?php echo get_theme_file_uri( '/assets/images/search.png' ); ?>" alt=""></button>
+                            </form>
+                        </div>
+                    </div>
+                                           
                 </div>
             </div>
         </nav><!-- / navigation  -->
     </header><!-- / Header Area  -->
-    <!-- <div class="header_gutter"></div> -->
-
     

@@ -13,15 +13,14 @@ function web_setup_theme(){
     add_theme_support('woocommerce');
 
 	//load text domain
-	load_theme_textdomain('tay', get_template_directory() . '/language');
-    add_image_size( 'best_selling_image', '160' , '240', true );
+	load_theme_textdomain('ky', get_template_directory() . '/language');
+    // add_image_size( 'best_selling_image', '160' , '240', true );
 
 	// Menu Register 
 	if(function_exists('register_nav_menus')){
     	register_nav_menus(array(
-          'menu-1'	=>	__('Main Left Menu', 'web'),
-          'menu-2'  =>  __('Main Right Menu', 'web'),
-          'menu-3'  =>  __('Footer Menu', 'web'),
+          'menu-1'	=>	__('Main Menu', 'ky'),
+          'menu-2'  =>  __('Footer Menu', 'ky'),
 		));
 	}
 }
@@ -50,11 +49,6 @@ function web_setup_assets(){
 
   // //localize data 
   $data = array (
-    'map_icon' => $map_icon,
-    'map_zoom' => $map_zoom,
-    'gmap_latitude' => $google_map['lat'],
-    'gmap_longitude' => $google_map['lng'],
-    'gmap_address' => $google_map['address'],
     'site_url'   => get_theme_file_uri(),
     'admin_ajax'   => admin_url( 'admin-ajax.php' ),
   );
@@ -69,7 +63,7 @@ function web_setup_assets(){
     wp_enqueue_style('animate', get_theme_file_uri('/assets/css/animate.min.css'));
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.min.css'));
 	wp_enqueue_style('main_style', get_theme_file_uri('/assets/css/main-style.css'), null, time());
-	wp_enqueue_style('tay_style', get_stylesheet_uri(), null, time());
+	wp_enqueue_style('ky_style', get_stylesheet_uri(), null, time());
 }
 add_action('wp_enqueue_scripts', 'web_setup_assets');
 
@@ -141,7 +135,7 @@ function web_acf_admin_head() {
         padding: 35px;
     }
 
-    #acf-group_5a2badeb476ba.postbox.acf-postbox .hndle.ui-sortable-handle span {
+    #acf-group_5a2badeb476ba.postbox.acf-postbox h2 {
         font-size: 2.5rem;
         color: white;
     }
@@ -222,29 +216,28 @@ add_filter( 'get_search_form', 'my_search_form', 100 );
 
 
 // Global Offices
-add_action('init','webone_services_post_type');
-function webone_services_post_type() {
-    register_post_type( 'services',
-        array(
-        'labels' =>
-        array(
-            'name' => __( 'Services', 'web'),  
-            'singular_name' => __( 'Service', 'web'),
-            'add_new_item' => __('Add New Service', 'web'), 
-            'add_new' => __( 'Add New Service', 'web'),
-            'edit_item' => __( 'Edit Service', 'web'),
-            'new_item' => __( 'New Service', 'web' ),
-            'view_item' => __( 'View Service' ),
-            'not_found' => __( 'Sorry, we couldn\'t find the Service you are looking for.',  'web' ),
-        ),
+// add_action('init','webone_services_post_type');
+// function webone_services_post_type() {
+//     register_post_type( 'services',
+//         array(
+//         'labels' =>
+//         array(
+//             'name' => __( 'Services', 'web'),  
+//             'singular_name' => __( 'Service', 'web'),
+//             'add_new_item' => __('Add New Service', 'web'), 
+//             'add_new' => __( 'Add New Service', 'web'),
+//             'edit_item' => __( 'Edit Service', 'web'),
+//             'new_item' => __( 'New Service', 'web' ),
+//             'view_item' => __( 'View Service' ),
+//             'not_found' => __( 'Sorry, we couldn\'t find the Service you are looking for.',  'web' ),
+//         ),
 
-        'public' => true,
-        'menu_postion' => 36,
-        'show_in_menu ' => true,
-        'menu_icon'=>'dashicons-layout',
-        'supports' => array( 'title','editor','thumbnail', 'excerpt')
-        )
-    );
-}
+//         'public' => true,
+//         'menu_postion' => 36,
+//         'show_in_menu ' => true,
+//         'menu_icon'=>'dashicons-layout',
+//         'supports' => array( 'title','editor','thumbnail', 'excerpt')
+//         )
+//     );
+// }
 
-}
