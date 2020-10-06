@@ -19,7 +19,10 @@ $sliders = get_field('sliders');
 	                        <p data-animation="fadeInUp" data-delay="0.2s"><?php echo $slider['text']; ?></p>
 	                        <div class="buttons">
 	                        	<?php if($slider['button_1'] || $slider['button_2']) :
+
 	                        		printf('<a target="%s" data-animation="fadeInUp" data-delay="0.6s" href="%s" class="btn">%s</a>', $slider['button_1']['target'], $slider['button_1']['url'], $slider['button_1']['title']);
+
+
 	                        		printf('<a target="%s" data-animation="fadeInUp" data-delay="0.6s" href="%s" class="btn">%s</a>', $slider['button_2']['target'], $slider['button_2']['url'], $slider['button_2']['title']);
 	                        	endif; ?>
 	                        </div>
@@ -27,8 +30,9 @@ $sliders = get_field('sliders');
 
 	                    <?php if($slider['delivery_box']['text']) : ?>
 	                    <div class="delivery-box">
-
+	                    	<?php if ($slider['delivery_box']['occasions']): ?>
 	                        <h3 class="occasions" data-animation="fadeInUp" data-delay="1s"><?php echo $slider['delivery_box']['occasions']; ?></h3>
+	                    	<?php endif; ?>
 	                        <div class="content" data-animation="fadeInUp" data-delay="1s">
 	                            <div class="text-center">
 	                                <p><?php echo $slider['delivery_box']['text']; ?></p>
@@ -87,7 +91,7 @@ $sliders = get_field('sliders');
 	<section class="product-category" style="background: url(<?php echo  $occasions_section_bg; ?>);">
 	    <div class="container">
 
-	        <?php $occasions_section_title = get_field('section_title'); ?>
+	        <?php $occasions_section_title = get_field('occasions_section_title'); ?>
 	        <div class="row">
 	            <div class="col-md-12">
 	                <div class="section-title text-center">
@@ -97,70 +101,44 @@ $sliders = get_field('sliders');
 	            </div>
 	        </div>
 
-	        <div class="category-list">
-	            <div class="row">
+	        <div class="category-slider-wrapper">
+	        	<div class="slider-arrows text-right wow fadeInUp">
+	        		<img class="prev" src="<?php echo get_theme_file_uri( '/assets/images/arrow-left.png' ); ?>" alt="">
+	        		<span class="fas fa-circle"></span>
+	        		<img class="next" src="<?php echo get_theme_file_uri( '/assets/images/arrow-right.png' ); ?>" alt="">
+	        	</div>
+	        
+		        <div class="category-list wow fadeInUp" id="category-list">
 
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
+	            	<?php $product_cats = get_terms( $args = array( 'taxonomy' => 'product_cat', 'hide_empty' => false, ) );
+	            		foreach ($product_cats as $product_cat) :
+	            			$term_id = $product_cat->term_id;
+	            			$thumbnail_id = get_woocommerce_term_meta( $product_cat->term_id, 'thumbnail_id', true ); 
+							$image = wp_get_attachment_url( $thumbnail_id ); 
+	            	?>
+	                <div class="category">
+	                    <a class="cat-title" href="<?php echo get_term_link( $term_id ); ?>"><?php echo $product_cat->name; ?></a>
+	                    <div class="cat-img">
+	                        <img src="<?php echo $image; ?>" alt="">
+
+	                        <div class="hover-content">
+	                            <div class="content">
+	                                <a href="<?php echo get_term_link( $term_id ); ?>" class="btn"><?php _e('Shop Now', 'ky'); ?></a>
+	                            </div>
+	                        </div>
+
 	                    </div>
 	                </div>
-	                
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
-	                    </div>
-	                </div>
-	                
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
-	                    </div>
-	                </div>
-	                
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
-	                    </div>
-	                </div>
-	                
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
-	                    </div>
-	                </div>
-	                
-	                <div class="col-md-3 col-sm-4 col-xs-6 col wow fadeInUp">
-	                    <div class="category" href="#">
-	                        <a class="cat-title" href="#">Bithday Flowers</a>
-	                        <a href="#" class="cat-img">
-	                            <img src="../assets/images/category-1.png" alt="">
-	                        </a>
-	                    </div>
-	                </div>
-	                
-	            </div>
-	            <div class="row">
-	                <div class="show-now-button text-center wow fadeInUp">
-	                    <a href="#" class="btn">Shop Now</a>
-	                </div>
-	            </div>
+	            	<?php endforeach; ?>
+		        </div>
+
 	        </div>
+
+	        <div class="row">
+                <div class="show-now-button text-center wow fadeInUp">
+                    <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="btn"><?php _e('Show All', 'ky'); ?></a>
+                </div>
+            </div>
 	    </div>
 	</section>
 

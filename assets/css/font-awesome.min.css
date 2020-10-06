@@ -378,6 +378,10 @@ content: "\f14a"; }
   content: "\f06e";
 }
 
+.fa-circle:before {
+    content: "\f111";
+}
+
 .fa-thumbs-up:before {
   content: "\f164";
 }

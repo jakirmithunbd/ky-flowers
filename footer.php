@@ -17,45 +17,56 @@
 
                 <div class="col-md-2 col-sm-6 col-xs-6 col">
                     <div class="footer-items">
-                        <h4 class="footer-item-title">Information</h4>
-                        
-                        <ul class="nav navbar-nav">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="clients.html">Clients</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                        </ul>
+                        <h4 class="footer-item-title"><?php _e('Information', 'ky'); ?></h4>
+
+                        <?php if (function_exists('wp_nav_menu')): ?>
+                            <?php wp_nav_menu( 
+                                  array(
+                                  'menu'               => 'Footer Menu',
+                                  'theme_location'     => 'menu-2',
+                                  'depth'              => 3,
+                                  'container'          => 'false',
+                                  'menu_class'         => 'nav navbar-nav',
+                                  'menu_id'            => '',
+                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                  'walker'             => new wp_bootstrap_navwalker()
+                                  ) 
+                                ); 
+                            ?>
+                        <?php endif; ?>
                     </div>
                 </div>
 
+                <?php $working_hours = get_field('working_hours', 'options'); ?>
                 <div class="col-md-3 col-sm-6 col-xs-6 col">
                     <div class="footer-items">
-                        <h4 class="footer-item-title">Working Hours</h4>
+                        <h4 class="footer-item-title"><?php echo $working_hours['title']; ?></h4>
                         
-                        <p>Mon.-Fri. : 10AM – 9PM</p>
-                        <p>Saturday : 10AM – 5PM</p>
-                        <p>Sunday : Closed</p>
+                        <?php echo $working_hours['content']; ?>
                     </div>
                 </div>
 
+                <?php $contacts = get_field('contacts', 'options'); ?>
                 <div class="col-md-3 col-sm-6 col-xs-6 col">
                     <div class="footer-items">
-                        <h4 class="footer-item-title">Contacts</h4>
+                        <h4 class="footer-item-title"><?php _e('Contacts', 'ky'); ?></h4>
                         
-                        <a href="#"> <span class="fas fa-map-marker-alt"></span> 701 S Brand Blvd Glendale, CA  91204</a>
-                        <a href="tel:(747) 777 7737"> <span class="fas fa-phone"></span> (747) 777 7737</a>
-                        <a href="mailto:info@k&Yflowers.com"> <span class="far fa-envelope"></span> info@k&Yflowers.com</a>
+                        <a href="<?php echo $contacts['map_url']; ?>"> <span class="fas fa-map-marker-alt"></span><?php echo $contacts['map']; ?></a>
+                        <a href="tel:<?php echo $contacts['phone']; ?>"> <span class="fas fa-phone"></span><?php echo $contacts['phone']; ?></a>
+                        <a href="mailto:<?php echo $contacts['email']; ?>"> <span class="far fa-envelope"></span><?php echo $contacts['email']; ?></a>
                     </div>
                 </div>
 
                 <div class="col-md-2 col-sm-6 col-xs-6 col">
                     <div class="footer-items">
-                        <h4 class="footer-item-title">Follow us on</h4>
+                        <h4 class="footer-item-title"><?php _e('Follow us on', 'ky'); ?></h4>
                         
                         <div class="social-media">
-                            <a href="#"><span class="fab fa-instagram"></span></a>
-                            <a href="#"><span class="fab fa-facebook-f"></span></a>
-                            <a href="#"><span class="fab fa-twitter"></span></a>
+                            <?php $social_media = get_field('social_media', 'options'); if($social_media) : foreach ($social_media as $social_item) : ?>
+                            <a target="_blank" href="<?php echo $social_item['url'] ?>">
+                                <span class="fab fa-<?php echo $social_item['icon']['value']; ?>"></span>
+                            </a>
+                            <?php endforeach; endif; ?>
                         </div>
                     </div>
                 </div>
@@ -64,7 +75,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copy-right text-center">
-                        <p><a href="#">k&yflowers.com</a> © copyright 2020 designed by <a href="#">Web One Studio</a></p>
+                        <p><?php the_field("copy_right", "options"); ?></p>
                     </div>
                 </div>
             </div>

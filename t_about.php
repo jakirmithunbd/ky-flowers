@@ -6,81 +6,68 @@ Template Name: About Us
 get_header(); ?>
 
 <?php echo get_template_part( 'template-parts/page-header' ); ?>
-
+	
+	<?php $florists_taste = get_field('florists_taste'); ?>
     <section class="florists-taste about-items">
         <div class="container">
             <div class="row align-center">
                 <div class="col-md-6 col-sm-6">
                     <div class="content wow fadeInUp">
-                        <h3 class="text-center">Los Angeles Florists with high taste  </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus sed eget dui pharetra. Sagittis, ridiculus nam vitae sem. Convallis et integer adipiscing gravida ipsum in. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus sed eget dui pharetra. Sagittis, ridiculus nam vitae sem. Convallis et integer adipiscing gravida ipsum in. Quis augue eget laoreet nibh erat placerat faucibus facilisis.</p>
+                    	<?php echo $florists_taste['content']; ?>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-sm-6">
                     <div class="media wow fadeInUp">
-                        <img src="../assets/images/Florists.png" alt="">
+                        <img src="<?php echo $florists_taste['image']['url'] ?>" alt="<?php echo $florists_taste['image']['title'] ?>">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <?php $modern_approach = get_field('modern_approach'); ?>
     <section class="modern-approach about-items">
         <div class="container">
             <div class="row align-center">
                 <div class="col-md-6">
                     <div class="media wow fadeInUp">
-                        <img src="../assets/images/approach.jpg" alt="">
+                        <img src="<?php echo $modern_approach['image']['url'] ?>" alt="<?php echo $modern_approach['image']['url'] ?>">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="content wow fadeInUp">
-                        <h3>A Modern Approach</h3>
-                        <p>We pride ourselves on sourcing on-trend flowers and creating one-of-kind arrangements you won't find anywhere else. We work with the best-in-class designers to offer stunning bouquets and curated plants that fit every occasion.</p>
-                        <p>We pride ourselves on sourcing on-trend flowers and creating one-of-kind arrangements you won't find anywhere else. </p>
+                    	<?php echo $modern_approach['content']; ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <?php $farm = get_field('sourced_at_the_farm'); ?>
     <section class="firm about-items">
         <div class="container">
             <div class="row align-center">
                 <div class="col-md-6">
                     <div class="content">
-                        <h3 class="text-center wow fadeInUp">Sourced At The Farm</h3>
+                        <h3 class="text-center wow fadeInUp"><?php echo $farm['title']; ?></h3>
                         <div class="icon-list-wrapper">
+                        	<?php foreach ($farm['list_items'] as $item) : ?>
                             <div class="list wow fadeInUp">
                                 <div class="icon">
-                                    <img src="../assets/images/w-icon-1.png" alt="">
+                                    <img src="<?php echo $item['icon']['url'] ?>" alt="<?php echo $item['icon']['title'] ?>">
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus sed eget dui </p>
+                                <p><?php echo $item['text']; ?></p>
                             </div>
-
-                            <div class="list wow fadeInUp">
-                                <div class="icon">
-                                    <img src="../assets/images/w-icon-2.png" alt="">
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus sed eget dui </p>
-                            </div>
-
-                            <div class="list wow fadeInUp">
-                                <div class="icon">
-                                    <img src="../assets/images/w-icon-3.png" alt="">
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus sed eget dui </p>
-                            </div>
+                        	<?php endforeach; ?>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="media wow fadeInUp">
-                        <img src="../assets/images/farm.png" alt="">
+                        <img src="<?php echo $farm['image']['url']; ?>" alt="<?php echo $farm['image']['title']; ?>">
                     </div>
                 </div>
             </div>

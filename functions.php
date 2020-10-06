@@ -67,14 +67,6 @@ function web_setup_assets(){
 }
 add_action('wp_enqueue_scripts', 'web_setup_assets');
 
-/**
- * Dashboard google map api key support.
- */
-add_filter('acf/settings/google_api_key', function () {
-    $gmap_api = get_field('google_map_api_key', 'options');
-    return $gmap_api;
-});
-
 // acf options page
 if( function_exists('acf_add_options_page') ) {
 	
@@ -186,11 +178,6 @@ function additional_scripts(){
           }
         );
         wow.init();
-        document.getElementById('moar').onclick = function() {
-          var section = document.createElement('section');
-          section.className = 'section--purple wow fadeInDown';
-          this.parentNode.insertBefore(section, this);
-        };
     </script>
     <?php
 }
