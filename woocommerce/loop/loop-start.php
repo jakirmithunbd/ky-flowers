@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="col-sm-4 col-xs-6 col">
+

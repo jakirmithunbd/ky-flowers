@@ -252,7 +252,7 @@ Header Hopping cart
                 border-radius: 0;
                 text-align: center;
                 padding: 10px 15px;
-                background: #000;
+                background: $primary;
                 font-weight: 500;
                 text-transform: uppercase;
                 @include em(12px, 16px);
@@ -586,7 +586,7 @@ ul#shipping_method li input {
 .woocommerce {
 
     .button {
-        background-color: #000 !important;
+        background-color: $primary !important;
     }
 }
 /********************************************************
@@ -2030,8 +2030,18 @@ Cart Page
 /****************************************************************************************
 *                               Single Product Page
 ****************************************************************************************/ 
-.single-product .disable-singeproduct-page {
-    display: none;
+.single-product {
+
+    .shop-page-wrapper {
+
+        .col-md-2 {
+            display: none;
+        }
+    }
+
+    .disable-singeproduct-page {
+        display: none;
+    }
 }
 
 .single-product-gallery-wrapper {
@@ -2129,40 +2139,6 @@ Cart Page
     }
 }
 
-.single-product {
-
-    .WooCommerce-wrapper {
-
-        .related {
-            display: none;
-        }
-
-        .reverse {
-            display: inherit;
-
-            .products {
-                margin-top: 30px;
-
-                .slick-list {
-                    position: relative;
-
-                    &:before {
-                        content: "Related Products";
-                        color: #000;
-                        display: block;
-                        @include em(36px, 42px);
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-
-            .col-md-9 {
-                width: 100%;
-            }
-        }
-    }
-}
-
 .product {
 
     .summary {
@@ -2177,28 +2153,6 @@ Cart Page
                 color: #2C241C;
                 font-weight: 700;
                 @include em(20px, 27px);
-            }
-        }
-    }
-}
-
-.single-product {
-
-    .container {
-        max-width: 1370px;
-    }
-    
-    .WooCommerce-wrapper {
-        padding-bottom: 250px;
-
-        .product {
-
-            .cart {
-
-                .button {
-                    float: left !important;
-                    margin-top: 10px !important;
-                }
             }
         }
     }
@@ -2458,6 +2412,23 @@ Cart Page
 }
 
 
+/****************************************************************************************
+*                               WOOCOMERCE FORM
+****************************************************************************************/ 
+.woocommerce-form {
+
+    .form-row {
+
+        label {
+
+        }
+
+        input {
+            
+        }
+    }
+}
+
 
 /****************************************************************************************
 *                               Pricing filter widget
@@ -2526,7 +2497,7 @@ Cart Page
         }
 
         .button {
-            background-color: #000;
+            background-color: $primary;
             color: #fff;
             font-weight: 400;
             padding: 7px 26px;
@@ -2564,7 +2535,7 @@ Cart Page
                 &.product-action {
 
                     .button {
-                        background-color: #707070;
+                        background-color: $primary;
 
                         .tinvwl-txt {
                             font-size: 1rem;

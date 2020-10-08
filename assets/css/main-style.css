@@ -1822,6 +1822,10 @@ button:hover, button:focus, button:active:focus {
     .product .media .hover-content hr {
       border-color: #EB9BA2;
       margin: 70px 0; }
+    .product .media .hover-content .icons img {
+      -webkit-transform: scale(1) rotate(0) !important;
+      -ms-transform: scale(1) rotate(0) !important;
+      transform: scale(1) rotate(0) !important; }
     .product .media .hover-content .icons .button {
       background: #EB9BA2 !important; }
     .product .media .hover-content .icons a {
@@ -2107,7 +2111,7 @@ Header Hopping cart
       border-radius: 0;
       text-align: center;
       padding: 10px 15px;
-      background: #000;
+      background: #EB9BA2;
       font-weight: 500;
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -2340,7 +2344,7 @@ ul#shipping_method li input {
   padding: 0; }
 
 .woocommerce .button {
-  background-color: #000 !important; }
+  background-color: #EB9BA2 !important; }
 
 /********************************************************
 *                   My Account
@@ -3265,6 +3269,9 @@ Cart Page
 /****************************************************************************************
 *                               Single Product Page
 ****************************************************************************************/
+.single-product .shop-page-wrapper .col-md-2 {
+  display: none; }
+
 .single-product .disable-singeproduct-page {
   display: none; }
 
@@ -3323,25 +3330,6 @@ Cart Page
       border: 0 !important;
       font-style: normal; }
 
-.single-product .WooCommerce-wrapper .related {
-  display: none; }
-
-.single-product .WooCommerce-wrapper .reverse {
-  display: inherit; }
-  .single-product .WooCommerce-wrapper .reverse .products {
-    margin-top: 30px; }
-    .single-product .WooCommerce-wrapper .reverse .products .slick-list {
-      position: relative; }
-      .single-product .WooCommerce-wrapper .reverse .products .slick-list:before {
-        content: "Related Products";
-        color: #000;
-        display: block;
-        font-size: 2.25rem;
-        line-height: 1.16667;
-        margin-bottom: 20px; }
-  .single-product .WooCommerce-wrapper .reverse .col-md-9 {
-    width: 100%; }
-
 .product .summary .price ins {
   text-decoration: none; }
 
@@ -3350,15 +3338,6 @@ Cart Page
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.35; }
-
-.single-product .container {
-  max-width: 1370px; }
-
-.single-product .WooCommerce-wrapper {
-  padding-bottom: 250px; }
-  .single-product .WooCommerce-wrapper .product .cart .button {
-    float: left !important;
-    margin-top: 10px !important; }
 
 .login-registration-page .form-wrapper {
   background-color: #fff;
@@ -3552,6 +3531,9 @@ Cart Page
       background-color: #000; }
 
 /****************************************************************************************
+*                               WOOCOMERCE FORM
+****************************************************************************************/
+/****************************************************************************************
 *                               Pricing filter widget
 ****************************************************************************************/
 .sidebar {
@@ -3591,7 +3573,7 @@ Cart Page
     font-size: 1rem;
     line-height: 1.3125; }
   .widget_price_filter .price_slider_amount .button {
-    background-color: #000;
+    background-color: #EB9BA2;
     color: #fff;
     font-weight: 400;
     padding: 7px 26px;
@@ -3611,7 +3593,7 @@ Cart Page
   color: #000; }
 
 .tinv-wishlist-clear .tinvwl-table-manage-list .wishlist_item td.product-action .button {
-  background-color: #707070; }
+  background-color: #EB9BA2; }
   .tinv-wishlist-clear .tinvwl-table-manage-list .wishlist_item td.product-action .button .tinvwl-txt {
     font-size: 1rem;
     position: inherit;

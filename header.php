@@ -83,17 +83,18 @@
 
                     <div class="header_right-menu">
                         <a class="hidden-xs right-items" id="search-icon" href="#"><img src="<?php echo get_theme_file_uri( '/assets/images/search.png' ); ?>" alt=""></a>
-                        <a class="right-items" href="#"><img src="<?php echo get_theme_file_uri( '/assets/images/heart.png' ); ?>" alt=""></a>
+                        <a class="right-items" href="<?php echo site_url( ); ?>/wishlist"><img src="<?php echo get_theme_file_uri( '/assets/images/heart.png' ); ?>" alt=""></a>
                         <div class="user-area right-items"><img src="<?php echo get_theme_file_uri( '/assets/images/account.png' ); ?>" alt="">
                             <div class="user-menu">
                                 <?php 
                                 $current_user = wp_get_current_user(); 
 
                                 if ( is_user_logged_in() ) : ?>
-                                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e( 'My Account', 'nor' ); ?></a>
+                                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e( 'My Account', 'ky' ); ?></a>
+                                <a href="<?php echo site_url( ); ?>/my-account/customer-logout/"><?php _e('Log Out', 'ky'); ?></a>
                                 <?php else: ?>
-                                <a href="<?php echo get_permalink( 159 ); ?>"><?php _e( 'Login', 'nor' ); ?></a>
-                                <a href="<?php echo get_permalink( 231 ); ?>"><?php _e( 'Sign Up', 'nor' ); ?></a>
+                                <a href="<?php echo site_url( ); ?>/login"><?php _e( 'Login', 'ky' ); ?></a>
+                                <a href="<?php echo site_url( ); ?>/registration"><?php _e( 'Registration', 'ky' ); ?></a>
                                 <?php endif;?>
                             </div>
                         </div>
