@@ -1,6 +1,19 @@
 <?php get_header(); ?>
 
-<?php echo get_template_part( 'template-parts/page-header' ); ?>
+<?php
+$bg = get_field('shop_page_backgorund', get_the_ID()) ? get_field('shop_page_backgorund', get_the_ID()) : get_theme_file_uri( '/assets/images/shop-banner-bg.jpg' ); 
+ 
+?>
+<section class="page-banner woocommerce-page-title" style="background: url(<?php echo $bg; ?>);">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="section-title text-center">
+                <h2 class="wow fadeInUp"><?php the_title(); ?></h2>
+            </div>
+        </div>
+    </div>
+</section>
+    
 
 <div id="primary" class="content-area">
     <section class="page-content">

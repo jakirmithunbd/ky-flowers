@@ -163,17 +163,50 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         $('.search-container').toggleClass('ShowSearch');
     });
 
-    // $('.mobile-filter select').on('change', function(){
-    //     // $('#myTab li').eq($(this).val()).tab('show');
-    //     var $optionSelected = $("option:selected", this);
-    //     $optionSelected.tab('show')
-    //     // var id = $(this).val();
-    //     // $('a[href="' + id + '"]').tab('show');
-    // });
-
     $('#mySelect').on('change', function (e) {
       var $optionSelected = $("option:selected", this);
       $optionSelected.tab('show')
+    });
+
+        /* Header Mini cart hover ajaxfy */
+   $('.shopping_cart').hover(function(){
+    var data = {
+        'action': 'mode_theme_update_mini_cart'
+    };
+    
+    $.post(
+        woocommerce_params.ajax_url, // The AJAX URL
+        data, // Send our PHP function
+        function(response){
+          $('.header_shopping_cart_content').html(response); // Repopulate the specific element with the new content
+        }
+    );
+   });
+
+   $('.woocommerce .quantity').on('click', '.qty-minus', function (e) {
+        var $inputQty = $(this).parent().find('input.qty');
+        var val = parseInt($inputQty.val());
+        var step = $inputQty.attr('step');
+        step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+        if (val > 0) {
+            $inputQty.val(val - step).change();
+        }
+    });
+
+    // $('.qty').on('change', function(){
+    //     setTimeout(function() {//This is set, so it gives the update cart button time to enable from disable mode
+    //         $('input[name="update_cart"]').trigger('click');
+    //     }, 2000);
+
+    // });
+
+
+    $('.woocommerce .quantity').on('click', '.qty-plus', function (e) {
+        var $inputQty = $(this).parent().find('input.qty');
+        var val = parseInt($inputQty.val());
+        var step = $inputQty.attr('step');
+        step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+        $inputQty.val(val + step).change();
     });
 
     

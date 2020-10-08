@@ -3,6 +3,7 @@
 
 require_once get_theme_file_path("/inc/wp-bootstrap-navwalker.php");
 require_once get_theme_file_path("/inc/web-login-page-design.php");
+require_once get_theme_file_path("/inc/ky-hooks-filters.php");
 
 function web_setup_theme(){
 	add_theme_support('title-tag');
@@ -202,29 +203,27 @@ function my_search_form( $form ) {
 add_filter( 'get_search_form', 'my_search_form', 100 );
 
 
-// Global Offices
-// add_action('init','webone_services_post_type');
-// function webone_services_post_type() {
-//     register_post_type( 'services',
-//         array(
-//         'labels' =>
-//         array(
-//             'name' => __( 'Services', 'web'),  
-//             'singular_name' => __( 'Service', 'web'),
-//             'add_new_item' => __('Add New Service', 'web'), 
-//             'add_new' => __( 'Add New Service', 'web'),
-//             'edit_item' => __( 'Edit Service', 'web'),
-//             'new_item' => __( 'New Service', 'web' ),
-//             'view_item' => __( 'View Service' ),
-//             'not_found' => __( 'Sorry, we couldn\'t find the Service you are looking for.',  'web' ),
-//         ),
+/* Header right mini cart number ajaxify */
+function dakota_header_ajaxify_add_to_cart( $fragments ) {
+  global $woocommerce;
+  ob_start();
+?>
+  <a class="ajaxify_cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" >
+    <div class="cart-icon">
+            <span class="fas fa-shopping-cart"></span>
+            <div class="count cart_quantity"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'dakota'), $woocommerce->cart->cart_contents_count);?></div>
+        </div>
+  </a>
+<?php 
+  $fragments['.ajaxify_cart'] = ob_get_clean();
+  return $fragments;
+}
+add_filter('add_to_cart_fragments', 'dakota_header_ajaxify_add_to_cart');
 
-//         'public' => true,
-//         'menu_postion' => 36,
-//         'show_in_menu ' => true,
-//         'menu_icon'=>'dashicons-layout',
-//         'supports' => array( 'title','editor','thumbnail', 'excerpt')
-//         )
-//     );
-// }
-
+/* Header right mini cart hover load cart item ajaxify * Js Part settings.js File */
+function mode_theme_update_mini_cart() {
+  echo wc_get_template( 'cart/mini-cart.php' );
+  die();
+}
+add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
+add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );

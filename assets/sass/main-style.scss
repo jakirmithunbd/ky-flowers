@@ -1205,7 +1205,7 @@ button {
 
     .delivery-box {
         position: absolute;
-        left: -118px;
+        left: -130px;
         top: calc(50% - 115px);
 
         p {
@@ -1327,6 +1327,18 @@ button {
         h2 {
             color: #FCF6F6;
             margin-bottom: 40px;
+        }
+    }
+
+    &.woocommerce-page-title {
+        padding: 200px 0 45px;
+
+        .section-title {
+            margin: 0 auto;
+
+            h2 {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -1577,6 +1589,11 @@ button {
                 background: rgba(44, 36, 28, 0.53);
                 border: 1px solid #DAB9B9;
                 border-radius: 5px;
+
+                 &:hover, &:focus {
+                    background-color: $primary;
+                    color: #fff;
+                }
             }
 
             hr {
@@ -1586,12 +1603,17 @@ button {
 
             .icons {
 
+                .button {
+                    background: $primary !important;
+                }
+
                 a {
                     margin: 0 25px;
                     border: 1px solid transparent;
                     padding: 5px;
                     border-radius: 5px;
                     transition: all .3s ease;
+                    color: #fff;
 
                     &:hover, &:focus {
                         border-color: $primary;
@@ -1621,7 +1643,7 @@ button {
             @include em(18px, 28px);
             color: #2C241C;
             transition: all .3s ease;
-            margin: 20px 0 5px;
+            margin: 5px 0;
 
             &:hover, &:focus {
                 color: $primary;
@@ -1720,6 +1742,12 @@ button {
     }
 }
 
+/*********************************** WOOCOMMERCE **********************************/ 
+.page-content {
+    padding: 60px 0;
+}
+
+@import "woocommerce";
 
 /**---- Responsive CSS ----**/
 @import "responsive";

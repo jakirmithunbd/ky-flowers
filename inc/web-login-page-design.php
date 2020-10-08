@@ -7,7 +7,7 @@ function verp_custom_login_page() {
 		}
 	    
 	    .login { 
-	    	background-image:url("'. get_stylesheet_directory_uri().'/assets/images/page-banner.jpg") !important; 
+	    	background-image:url("'. get_stylesheet_directory_uri().'/assets/images/slider-1.jpg") !important; 
 	    	background-repeat: no-repeat !important; 
 	    	background-attachment: fixed !important; 
 	    	background-position: center !important; 
