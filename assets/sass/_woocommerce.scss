@@ -428,6 +428,7 @@ Header Hopping cart
                 font-size: 1rem;
                 margin-bottom: 10px;
                 color: #2C241C;
+                margin-bottom: 0;
             }
 
             .wishlist-wrapper {
@@ -1120,6 +1121,7 @@ Cart Page
                 color: #2C241C;
                 @include em(20px, 27px);
                 font-weight: 400;
+                margin-bottom: 0;
 
                 span.woocommerce-Price-currencySymbol {
                     padding-right: 5px;

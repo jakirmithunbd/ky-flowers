@@ -30,6 +30,7 @@ function ky_before_woocommerce_output_content_wrapper() {
                 <div class="col-md-2">
                     <div class="shop-sidebar">
                         <div class="filter">Filter by:</div>
+                        '.get_sidebar( 'shop' ).'
                     </div>
                 </div>';
 }

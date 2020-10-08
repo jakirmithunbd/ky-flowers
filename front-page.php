@@ -228,6 +228,14 @@ $sliders = get_field('sliders');
 	                </div>
 	            </div>
 	        </div>
+
+	        <div class="row">
+	        	<div class="col-md-12">
+	        		<div class="show-feed">
+	        			<?php echo do_shortcode('[instagram-feed num=4 cols=4 showfollow=false]');?>
+	        		</div>
+	        	</div>
+	        </div>
 	    </div>
 	</section>
 <?php get_footer(); ?>

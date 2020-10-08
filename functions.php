@@ -210,7 +210,7 @@ function dakota_header_ajaxify_add_to_cart( $fragments ) {
 ?>
   <a class="ajaxify_cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" >
     <div class="cart-icon">
-            <span class="fas fa-shopping-cart"></span>
+            <img src="<?php echo get_theme_file_uri( '/assets/images/cart.png' ); ?>" alt="">
             <div class="count cart_quantity"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'dakota'), $woocommerce->cart->cart_contents_count);?></div>
         </div>
   </a>
