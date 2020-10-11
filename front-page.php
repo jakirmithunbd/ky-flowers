@@ -88,8 +88,6 @@ $sliders = get_field('sliders');
 	    </div>
 	</section> 
 
-	<?php echo get_sidebar('sidebar-1'); ?>
-
 	<?php $occasions_section_bg = get_field('occasions_section_bg') ? get_field('occasions_section_bg') : get_theme_file_uri( '/assets/images/category-background.png' ); ;  ?>
 	<section class="product-category" style="background: url(<?php echo  $occasions_section_bg; ?>);">
 	    <div class="container">
