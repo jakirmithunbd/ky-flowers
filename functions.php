@@ -148,11 +148,7 @@ function web_widgets_init() {
     register_sidebar( array(
         'name'          => esc_html__( 'Sidebar', 'web' ),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'web' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
+        'description'   => esc_html__( 'Add widgets here.', 'web' )
     ) );
 }
 add_action( 'widgets_init', 'web_widgets_init' );
@@ -229,39 +225,6 @@ add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_min
 add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
 
 
-
-add_action( 'init', 'product_custom_taxonomy_Item' );
-function product_custom_taxonomy_Item()  {
-
-$args = array(
-        'labels'                     => array (
-        'name'                       => 'Occasions',
-        'singular_name'              => 'Occasion',
-        'menu_name'                  => 'Occasion',
-        'all_items'                  => 'All Occasions',
-        'parent_item'                => 'Parent Occasion',
-        'parent_item_colon'          => 'Parent Occasion:',
-        'new_item_name'              => 'New Occasion Name',
-        'add_new_item'               => 'Add New Occasion',
-        'edit_item'                  => 'Edit Occasion',
-        'update_item'                => 'Update Occasion',
-        'separate_items_with_commas' => 'Separate Occasion with commas',
-        'search_items'               => 'Search Occasions',
-        'add_or_remove_items'        => 'Add or remove Occasions',
-        'choose_from_most_used'      => 'Choose from the most used Occasions',
-    ),
-    'hierarchical'               => true,
-    'public'                     => true,
-    'show_ui'                    => true,
-    'show_admin_column'          => true,
-    'show_in_nav_menus'          => true,
-    'show_tagcloud'              => true,
-);
-register_taxonomy( 'occasion', 'product', $args );
-    register_taxonomy_for_object_type( 'item', 'product' );
-}
-
-
 add_shortcode( 'wc_reg_form_bbloomer', 'bbloomer_separate_registration_form' );
     
 function bbloomer_separate_registration_form() {
@@ -333,3 +296,15 @@ function bbloomer_separate_login_form() {
    return ob_get_clean();
 }
 
+
+add_filter( 'woocommerce_taxonomy_args_product_tag', 'custom_wc_taxonomy_label_product_tag' );
+function custom_wc_taxonomy_label_product_tag( $args ) {
+  $args['label'] = 'Occasions';
+  $args['labels'] = array(
+      'name'        => 'Occasions',
+      'singular_name'   => 'Occasion',
+        'menu_name'     => 'Occasion'
+  );
+
+  return $args;
+}

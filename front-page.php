@@ -5,6 +5,7 @@ Template Name: Home
 get_header(); 
 
 $sliders = get_field('sliders');
+
 ?>
 	<div class="home-slider-wrapper">
 	    <div class="home-banner">
@@ -86,6 +87,8 @@ $sliders = get_field('sliders');
 	        </div>
 	    </div>
 	</section> 
+
+	<?php echo get_sidebar('sidebar-1'); ?>
 
 	<?php $occasions_section_bg = get_field('occasions_section_bg') ? get_field('occasions_section_bg') : get_theme_file_uri( '/assets/images/category-background.png' ); ;  ?>
 	<section class="product-category" style="background: url(<?php echo  $occasions_section_bg; ?>);">

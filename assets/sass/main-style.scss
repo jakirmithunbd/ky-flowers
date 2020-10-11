@@ -1721,7 +1721,7 @@ button {
                     font-family: $prata;
                 }
 
-                &.active {
+                &.active, &:hover, &:focus {
 
                     a {
                         text-decoration: underline;

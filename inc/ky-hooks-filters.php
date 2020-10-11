@@ -22,6 +22,7 @@ add_action( 'woocommerce_after_shop_loop', 'ky_after_woocommerce_after_shop_loop
 add_action( 'woocommerce_before_shop_loop_item_title', 'ky_woocommerce_before_shop_loop_item_thumb', 10 );
 add_action( 'woocommerce_shop_loop_item_title', 'ky_woocommerce_template_loop_product_title', 10 );
 add_action( 'woocommerce_template_loop_price', 'ky_woocommerce_template_loop_price', 10 );
+//add_action( 'woocommerce_sidebar', 'ky_woocommerce_get_sidebar', 10 );
 
 function ky_before_woocommerce_output_content_wrapper() {
 	echo '<section class="shop-page-wrapper">
@@ -29,11 +30,15 @@ function ky_before_woocommerce_output_content_wrapper() {
             <div class="row">
                 <div class="col-md-2">
                     <div class="shop-sidebar">
-                        <div class="filter">Filter by:</div>
-                        '.get_sidebar( 'shop' ).'
-                    </div>
+                        <div class="filter">Filter by:</div>';
+                        dynamic_sidebar();
+                    echo '</div>
                 </div>';
 }
+
+// function ky_woocommerce_get_sidebar() {
+//     echo woocommerce_get_sidebar();
+// }
 
 function ky_after_woocommerce_output_content_wrapper(){
 	echo '</div>
@@ -98,6 +103,7 @@ function ky_woocommerce_template_loop_product_title() {
             echo '</div>
         </div>';
 }
+
 
 
 
