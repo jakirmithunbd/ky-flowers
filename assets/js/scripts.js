@@ -44,6 +44,11 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
     // window.onload = headersetGutterHeight;
     // window.onresize = headersetGutterHeight;
 
+
+    $('.shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_head').on('click', function(){
+        $(this).parent().toggleClass('Show_items');
+    });
+
      //  Silder
     $(".reviews-slider").slick({
         dots: true,

@@ -3543,20 +3543,30 @@ Cart Page
   margin-bottom: 30px;
   padding-bottom: 15px;
   border-bottom: 1px solid #EB9BA2; }
-  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_head h3 {
-    color: #2C241C;
-    margin-bottom: 15px;
-    font-family: "Prata", serif;
-    font-size: 1.125rem;
-    line-height: 1.55556; }
-  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_body ul {
-    padding-left: 0; }
-    .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_body ul li label {
-      color: #6E6C6C;
-      font-family: "Poly", serif;
-      font-weight: 400;
-      font-size: 1rem;
-      line-height: 1.5625; }
+  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_head {
+    cursor: pointer; }
+    .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_head h3 {
+      color: #2C241C;
+      margin-bottom: 15px;
+      font-family: "Prata", serif;
+      font-size: 1.125rem;
+      line-height: 1.55556; }
+  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_sfilter {
+    margin-bottom: 0; }
+  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_body {
+    height: 0;
+    overflow: hidden; }
+    .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_body ul {
+      padding-left: 0; }
+      .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_body ul li label {
+        color: #6E6C6C;
+        font-family: "Poly", serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5625; }
+  .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .Show_items .bapf_body {
+    height: inherit;
+    overflow: inherit; }
   .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_ckbox_square input[type=checkbox] {
     height: 18px;
     width: 18px;
