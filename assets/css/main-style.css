@@ -1932,7 +1932,7 @@ button:hover, button:focus, button:active:focus {
 .page-content {
   padding: 60px 0; }
 
-.post-type-archive .woocommerce-breadcrumb {
+.post-type-archive .woocommerce-breadcrumb, .tax-product_cat .woocommerce-breadcrumb {
   display: none; }
 
 .logged-in .already-have-account {
