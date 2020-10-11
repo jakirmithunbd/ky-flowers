@@ -1622,6 +1622,16 @@ button {
                     &:hover, &:focus {
                         border-color: $primary;
                     }
+
+                    &.add_to_cart_button {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    &.added_to_cart.wc-forward {
+                        position: absolute;
+                        bottom: 15px;
+                    }
                 }
             }
         }

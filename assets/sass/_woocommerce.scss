@@ -1,6 +1,5 @@
 
-
-.post-type-archive, .tax-product_cat  {
+.post-type-archive {
 
     .woocommerce-breadcrumb {
         display: none;
@@ -276,8 +275,10 @@ Header Hopping cart
     .quantity {
 
         label {
-            font-family: $prata;
-            @include em(20px, 27px);
+            font-family: $poly;
+            color: #6D6C6C;
+            @include em(16px, 19px);
+            display: block;
         }
 
         .btn-qty {
@@ -900,19 +901,34 @@ Cart Page
     margin: 40px 0 0 !important;
 
     .quantity {
+        float: none !important;
+        max-width: 142px;
+
+        .quantity-wrapper {
+            background: #fff;
+            border: 1px solid $primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 23px;
+            margin-bottom: 30px;
+        }
 
         label {
-            font-family: $prata;
-            @include em(20px, 27px);
+            font-family: $poly;
+            color: #6D6C6C;
+            @include em(16px, 19px);
+            display: block;
+            margin-bottom: 10px;
         }
 
         .btn-qty {
-            width: 42px;
-            height: 42px;
-            font-size: 30px;
+            transform: scale(0.7);
+            // width: 42px;
+            // height: 42px;
+            font-size: 20px;
             cursor: pointer;
-            font-weight: 700;
-            background: #E8E8E8;
+            font-weight: 400;
             display: -webkit-inline-box;
             display: -ms-inline-flexbox;
             display: inline-flex;
@@ -933,57 +949,48 @@ Cart Page
             svg {
 
                 path {
-                    fill: #fff;
+                    fill: #2C241C;
                 }
             }
 
             &.input-text {
-                width: 82px !important;
+                width: 60px !important;
             }
 
-            &.qty-plus {
-                top: 2px;
+            // &.qty-plus {
+            //     top: 2px;
+            // }
 
-                &:hover, &:focus {
-                    background-color: #000;
-                }
-            }
-
-            &.qty-minus {
-                top: -5px;
-
-                &:hover, &:focus {
-                    background-color: #000;
-                }
-            }
+            // &.qty-minus {
+            //     top: -5px;
+            // }
 
         }
 
         .qty {
-            font-size: 1rem;
             font-weight: 400;
             color: #000 !important;
             border: 0 !important;
             padding: 0 !important;
             width: 40px !important;
-            background: #E8E8E8;
             @include appearance;
+            font-size: 1.5rem;
         }
     }
 
     .button  {
         width: 100%;
-        float: right !important;
-        max-width: 157px;
+        max-width: 286px;
         font-size: 1rem !important;
         font-weight: 400 !important;
-        height: 42px;
-        background: #000 !important;
+        background: $primary !important;
         white-space: nowrap;
-        border-radius: 0;
-        color: #707070;
+        border-radius: 5px;
+        padding: 17px !important;
+        color: #FCF6F6;
         text-transform: uppercase;
         @include align-center;
+        float: none !important;
 
         &:hover, &:focus {
             background-color: #000 !important;
@@ -2062,88 +2069,28 @@ Cart Page
     }
 }
 
-.single-product-button-wrapper {
-
-    .quantity {
-        float: none !important;
-        position: relative;
-        margin: 55px 0 !important;
-
-        label {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            display: block;
-        }
-    }
-
-    .button {
-        float: none !important;
-        color: #707070 !important;
-        margin-right: 55px !important;
-        background-color: #E8E8E8 !important;
-    }
-
-    .tinv-wishlist {
-
-        a {
-
-            &:before {
-                font-size: 1.5rem !important;
-                color: #E8E8E8 !important;
-            }
-        }
-    }
-
-    .variations {
-        display: inherit;
-
-        .label {
-            text-align: left;
-
-            label {
-                color: #000;
-                @include em(16px, 21px);
-            }
-        }
-
-        tr, td {
-            display: inherit;
-        }
-
-        tr {
-            margin-bottom: 25px;
-            display: block;
-        }
-    }
-
-    .woocommerce-product-attributes {
-        margin-bottom: 0;
-        border: 0 !important;
-
-        tbody {
-
-            tr {
-                background-color: transparent !important;
-
-                td, th {
-
-                    background-color: transparent !important;
-                    border: 0 !important;
-                    font-style: normal;
-                }
-            }
-        }
-    }
-}
-
 .product {
 
     .summary {
 
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+
+            span {
+                color: $primary;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
         .price {
+
+            span {
+
+            }
 
             ins {
                 text-decoration: none;
@@ -2521,6 +2468,19 @@ Cart Page
         }
     }
 }
+
+.woocommerce-breadcrumb {
+    color: #2C241C;
+    margin: 0 0 55px;
+
+    a {
+        font-weight: 400;
+        font-family: $prata;
+        @include em(16px, 22px);
+        color: #6D6C6C;
+    }
+}
+
 
 /****************************************************************************************
 *                               Wishlist

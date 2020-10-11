@@ -12,6 +12,13 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
+// Single page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price' ,10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title' ,5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart' ,30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta' ,40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt' ,20 );
+
 
 
 
@@ -23,6 +30,13 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'ky_woocommerce_before_sh
 add_action( 'woocommerce_shop_loop_item_title', 'ky_woocommerce_template_loop_product_title', 10 );
 add_action( 'woocommerce_template_loop_price', 'ky_woocommerce_template_loop_price', 10 );
 //add_action( 'woocommerce_sidebar', 'ky_woocommerce_get_sidebar', 10 );
+
+// Single Product
+add_action( 'woocommerce_single_product_summary', 'ky_pricewoocommerce_template_single_price' ,25 );
+add_action( 'woocommerce_single_product_summary', 'ky_titlewoocommerce_template_single_title' ,5 );
+add_action( 'woocommerce_single_product_summary', 'ky_woocommerce_template_single_meta' ,20 );
+add_action( 'woocommerce_single_product_summary', 'ky_addtocartwoocommerce_template_single_add_to_cart' ,30 );
+add_action( 'woocommerce_single_product_summary', 'ky_woocommerce_template_single_excerpt' ,10 );
 
 function ky_before_woocommerce_output_content_wrapper() {
 	echo '<section class="shop-page-wrapper">
@@ -106,10 +120,58 @@ function ky_woocommerce_template_loop_product_title() {
 
 
 
+function ky_pricewoocommerce_template_single_price() {
+    echo '<div class="price-wrapper"><span>-</span>';
+    woocommerce_template_single_price();
+    echo '<span>-</span></div>';
+}
 
+function ky_titlewoocommerce_template_single_title() {
+    echo '<h1 class="product_title entry-title">'.get_the_title().'</h1><div class="occasions-wrrapper">';
 
+    $terms = get_the_terms( $post->ID, 'product_tag' );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+        foreach ( $terms as $term ) {
+            printf('<a href="%s">%s</a>', get_term_link( $term->term_id ), $term->name);
+        }
+    }
+    echo '</div>';
+}
 
+function ky_addtocartwoocommerce_template_single_add_to_cart() {
+    woocommerce_template_single_add_to_cart();
+    echo do_shortcode("[ti_wishlists_addtowishlist loop=yes]");
 
+}
+
+function ky_woocommerce_template_single_meta(){
+    //woocommerce_template_single_meta();
+}
+
+function ky_woocommerce_template_single_excerpt() {
+    the_excerpt();
+    global $product;
+    $attributes = $product->get_attributes();
+    //var_dump($attributes);
+
+    ?>
+
+    <div class="attributes-wrapper">
+        <?php foreach ( $attributes as $attribute ) : ?>
+
+        <div class="items">
+            <span>-</span>
+            <p><?php //echo $attribute->get_name(); ?></p>
+
+            <a href="#">Penoy</a>
+
+        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php
+
+}
 
 
 
