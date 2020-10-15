@@ -168,9 +168,8 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         $('.search-container').toggleClass('ShowSearch');
     });
 
-    $('#mySelect').on('change', function (e) {
-      var $optionSelected = $("option:selected", this);
-      $optionSelected.tab('show')
+    $('#mySelect, .single-product-select').on('change', function (e) {
+       window.location.href = $(this).val();
     });
 
         /* Header Mini cart hover ajaxfy */

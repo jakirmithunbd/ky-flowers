@@ -2139,7 +2139,8 @@ Header Hopping cart
   color: #6D6C6C;
   font-size: 1rem;
   line-height: 1.1875;
-  display: block; }
+  display: block;
+  text-transform: inherit; }
 
 .shopping_cart .quantity .btn-qty {
   width: 42px;
@@ -3307,41 +3308,186 @@ Cart Page
 .single-product-gallery-wrapper .slick-next:before {
   content: "\f054"; }
 
+.product .summary .product_title {
+  color: #2C241C;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 2.25rem;
+  line-height: 1.36111; }
+
+.product .summary .occasions-wrrapper a {
+  color: #EB9BA2;
+  font-weight: 400;
+  display: inline-block;
+  font-family: "Poly", serif;
+  margin-bottom: 30px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  font-size: 1rem;
+  line-height: 1.375; }
+  .product .summary .occasions-wrrapper a:hover, .product .summary .occasions-wrrapper a:focus {
+    color: #2C241C; }
+  .product .summary .occasions-wrrapper a:not(:last-child) {
+    position: relative; }
+    .product .summary .occasions-wrrapper a:not(:last-child):after {
+      position: absolute;
+      content: ", ";
+      right: 0;
+      top: 0;
+      color: #000; }
+
+.product .summary .attributes-wrapper {
+  margin-bottom: 35px; }
+  .product .summary .attributes-wrapper .items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .product .summary .attributes-wrapper .items .line {
+      display: block;
+      height: 2px;
+      background: #2C241C;
+      width: 10px;
+      margin-right: 30px; }
+    .product .summary .attributes-wrapper .items p {
+      margin-bottom: 0;
+      color: #2C241C; }
+      .product .summary .attributes-wrapper .items p span {
+        color: #6D6C6C; }
+
+.product .summary .ocassions-wrapper h5 {
+  color: #2C241C;
+  font-weight: 400;
+  font-family: "Poly", serif;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.4; }
+
+.product .summary .ocassions-wrapper .ocassion-select {
+  position: relative;
+  max-width: 286px; }
+  .product .summary .ocassions-wrapper .ocassion-select:after {
+    content: "\f0dd";
+    position: absolute;
+    right: 15px;
+    top: 0;
+    color: #EB9BA2;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 25px; }
+
+.product .summary .ocassions-wrapper select {
+  border-color: #EB9BA2;
+  padding: 15px 25px;
+  color: #6D6C6C;
+  font-weight: 400;
+  font-family: "Poly", serif;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.625rem;
+  line-height: 1.07692;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%; }
+  .product .summary .ocassions-wrapper select option {
+    color: #6D6C6C;
+    font-weight: 400;
+    font-family: "Poly", serif;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.625rem;
+    line-height: 1.07692; }
+
 .product .summary .price-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
-  .product .summary .price-wrapper span {
-    color: #EB9BA2; }
+  align-items: center;
+  margin-top: 30px; }
   .product .summary .price-wrapper p {
     margin: 0; }
 
-.product .summary .price ins {
-  text-decoration: none; }
+.product .summary .price {
+  position: relative;
+  padding: 0 20px; }
+  .product .summary .price:before, .product .summary .price:after {
+    height: 2px;
+    background: #EB9BA2;
+    width: 10px;
+    position: absolute;
+    content: "";
+    top: calc(50% - -1px); }
+  .product .summary .price:before {
+    left: 0; }
+  .product .summary .price:after {
+    right: 0; }
+  .product .summary .price span {
+    color: #2C241C;
+    font-weight: 400;
+    font-family: "Poly", serif;
+    font-size: 2.25rem;
+    line-height: 1.11111; }
+  .product .summary .price ins {
+    text-decoration: none; }
+  .product .summary .price .woocommerce-Price-currencySymbol {
+    margin-right: 15px; }
 
-.product .summary .price .woocommerce-Price-amount {
-  color: #2C241C;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.35; }
+.product .summary .tinv-wraper.tinv-wishlist {
+  width: auto;
+  float: right;
+  position: relative;
+  top: -40px; }
 
-.login-registration-page .form-wrapper {
+.product .woocommerce-tabs .tabs {
+  padding-left: 0 !important; }
+  .product .woocommerce-tabs .tabs:before {
+    border: 0 !important; }
+  .product .woocommerce-tabs .tabs li {
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+    background: #fff !important; }
+    .product .woocommerce-tabs .tabs li:before, .product .woocommerce-tabs .tabs li:after {
+      content: none !important; }
+    .product .woocommerce-tabs .tabs li a {
+      font-family: "Prata", serif;
+      font-size: 1.5rem;
+      line-height: 1.375;
+      color: #6D6C6C !important;
+      background: #fff !important; }
+    .product .woocommerce-tabs .tabs li:not(:last-child) a {
+      margin-right: 60px; }
+    .product .woocommerce-tabs .tabs li.active a, .product .woocommerce-tabs .tabs li:hover a, .product .woocommerce-tabs .tabs li:focus a {
+      color: #2C241C !important;
+      text-decoration: underline !important; }
+
+.product .related h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  line-height: 1.25; }
+
+.form-wrapper {
   background-color: #fff;
   max-width: 670px;
   margin: 0 auto;
   padding: 100px; }
-  .login-registration-page .form-wrapper h3 {
+  .form-wrapper h3 {
     margin-bottom: 30px; }
-  .login-registration-page .form-wrapper .woocommerce-form {
+  .form-wrapper .woocommerce-form {
     margin-top: 30px; }
-    .login-registration-page .form-wrapper .woocommerce-form .form-row {
+    .form-wrapper .woocommerce-form .form-row {
       width: 100%; }
-      .login-registration-page .form-wrapper .woocommerce-form .form-row label {
+      .form-wrapper .woocommerce-form .form-row label {
         display: block; }
-      .login-registration-page .form-wrapper .woocommerce-form .form-row input.input-text {
+      .form-wrapper .woocommerce-form .form-row input.input-text {
         width: 100%;
         border: 0;
         background-color: #E8E8E8;
@@ -3349,60 +3495,60 @@ Cart Page
         line-height: 1.3125;
         color: #000;
         min-height: 55px; }
-      .login-registration-page .form-wrapper .woocommerce-form .form-row input {
+      .form-wrapper .woocommerce-form .form-row input {
         padding: 10px 20px;
         -webkit-transition: all .3s ease;
         -o-transition: all .3s ease;
         transition: all .3s ease; }
-        .login-registration-page .form-wrapper .woocommerce-form .form-row input:hover, .login-registration-page .form-wrapper .woocommerce-form .form-row input:focus {
+        .form-wrapper .woocommerce-form .form-row input:hover, .form-wrapper .woocommerce-form .form-row input:focus {
           border-left: 6px solid #000; }
-      .login-registration-page .form-wrapper .woocommerce-form .form-row span {
+      .form-wrapper .woocommerce-form .form-row span {
         font-size: 1rem;
         line-height: 1.3125;
         color: #707070;
         font-weight: 400; }
-    .login-registration-page .form-wrapper .woocommerce-form .input-field-lost-pass-wrapper {
+    .form-wrapper .woocommerce-form .input-field-lost-pass-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      .login-registration-page .form-wrapper .woocommerce-form .input-field-lost-pass-wrapper .lost_password a {
+      .form-wrapper .woocommerce-form .input-field-lost-pass-wrapper .lost_password a {
         font-weight: 700;
         color: #000; }
-  .login-registration-page .form-wrapper .lost_password {
+  .form-wrapper .lost_password {
     margin-left: 30px; }
-    .login-registration-page .form-wrapper .lost_password p {
+    .form-wrapper .lost_password p {
       color: #000;
       font-weight: 700;
       font-size: 1rem;
       line-height: 1.3125; }
-  .login-registration-page .form-wrapper .button, .login-registration-page .form-wrapper .btn {
+  .form-wrapper .button, .form-wrapper .btn {
     padding: 15px 47px;
     background-color: #E8E8E8;
     color: #000000;
     border: 3px solid transparent; }
-    .login-registration-page .form-wrapper .button:hover, .login-registration-page .form-wrapper .button:focus, .login-registration-page .form-wrapper .btn:hover, .login-registration-page .form-wrapper .btn:focus {
+    .form-wrapper .button:hover, .form-wrapper .button:focus, .form-wrapper .btn:hover, .form-wrapper .btn:focus {
       border-color: #000; }
-  .login-registration-page .form-wrapper .btn {
+  .form-wrapper .btn {
     position: relative;
     top: -3px;
     margin-right: 15px; }
 
-.login-registration-page .page-content {
+.page-content {
   max-width: 670px;
   margin: 0 auto;
   background-color: #fff;
   padding: 100px;
   background-image: unset;
   z-index: inherit; }
-  .login-registration-page .page-content .ur-frontend-form {
+  .page-content .ur-frontend-form {
     border: 0;
     margin: 0;
     padding: 0; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item label {
+    .page-content .ur-frontend-form .ur-form-row .ur-field-item label {
       display: none; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item input, .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item select {
+    .page-content .ur-frontend-form .ur-form-row .ur-field-item input, .page-content .ur-frontend-form .ur-form-row .ur-field-item select {
       background-color: #E8E8E8;
       color: #707070;
       font-size: 1rem;
@@ -3410,99 +3556,138 @@ Cart Page
       border: 0;
       min-height: 55px;
       padding: 10px 20px !important; }
-      .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item input::-webkit-input-placeholder, .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item select::-webkit-input-placeholder {
+      .page-content .ur-frontend-form .ur-form-row .ur-field-item input::-webkit-input-placeholder, .page-content .ur-frontend-form .ur-form-row .ur-field-item select::-webkit-input-placeholder {
         color: #707070;
         font-size: 16px;
         font-weight: 400;
         font-family: "Poly", serif; }
-      .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item input::-moz-placeholder, .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item select::-moz-placeholder {
+      .page-content .ur-frontend-form .ur-form-row .ur-field-item input::-moz-placeholder, .page-content .ur-frontend-form .ur-form-row .ur-field-item select::-moz-placeholder {
         color: #707070;
         font-size: 16px;
         font-weight: 400;
         font-family: "Poly", serif; }
-      .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item input:-ms-input-placeholder, .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item select:-ms-input-placeholder {
+      .page-content .ur-frontend-form .ur-form-row .ur-field-item input:-ms-input-placeholder, .page-content .ur-frontend-form .ur-form-row .ur-field-item select:-ms-input-placeholder {
         color: #707070;
         font-size: 16px;
         font-weight: 400;
         font-family: "Poly", serif; }
-      .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item input:-moz-placeholder, .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item select:-moz-placeholder {
+      .page-content .ur-frontend-form .ur-form-row .ur-field-item input:-moz-placeholder, .page-content .ur-frontend-form .ur-form-row .ur-field-item select:-moz-placeholder {
         color: #707070;
         font-size: 16px;
         font-weight: 400;
         font-family: "Poly", serif; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item ul {
+    .page-content .ur-frontend-form .ur-form-row .ur-field-item ul {
       padding-left: 0; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item .ur-checkbox-list label {
+    .page-content .ur-frontend-form .ur-form-row .ur-field-item .ur-checkbox-list label {
       font-weight: 400; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .ur-field-item .ur-checkbox-list input {
+    .page-content .ur-frontend-form .ur-form-row .ur-field-item .ur-checkbox-list input {
       min-height: inherit; }
-    .login-registration-page .page-content .ur-frontend-form .ur-form-row .validate-required .user-registration-error {
+    .page-content .ur-frontend-form .ur-form-row .validate-required .user-registration-error {
       width: 100%; }
-    .login-registration-page .page-content .ur-frontend-form .ur-button-container .btn {
+    .page-content .ur-frontend-form .ur-button-container .btn {
       background-color: #E8E8E8;
       color: #707070;
       cursor: pointer; }
-      .login-registration-page .page-content .ur-frontend-form .ur-button-container .btn span {
+      .page-content .ur-frontend-form .ur-button-container .btn span {
         background-color: transparent; }
-  .login-registration-page .page-content .u-columns .u-column1 {
+  .page-content .u-columns .u-column1 {
     display: none; }
-  .login-registration-page .page-content .u-columns .u-column2 {
+  .page-content .u-columns .u-column2 {
     float: none;
     width: 100%; }
-    .login-registration-page .page-content .u-columns .u-column2 h2 {
+    .page-content .u-columns .u-column2 h2 {
       display: none; }
-    .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register {
+    .page-content .u-columns .u-column2 .woocommerce-form-register {
       border: 0;
       padding: 0; }
-      .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input, .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register select {
+      .page-content .u-columns .u-column2 .woocommerce-form-register input, .page-content .u-columns .u-column2 .woocommerce-form-register select {
         background-color: #E8E8E8;
         color: #707070;
         font-size: 1rem;
         line-height: 1.3125;
         border: 0;
         padding: 10px 20px !important; }
-        .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input::-webkit-input-placeholder, .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register select::-webkit-input-placeholder {
+        .page-content .u-columns .u-column2 .woocommerce-form-register input::-webkit-input-placeholder, .page-content .u-columns .u-column2 .woocommerce-form-register select::-webkit-input-placeholder {
           color: #707070;
           font-size: 16px;
           font-weight: 400;
           font-family: "Poly", serif; }
-        .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input::-moz-placeholder, .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register select::-moz-placeholder {
+        .page-content .u-columns .u-column2 .woocommerce-form-register input::-moz-placeholder, .page-content .u-columns .u-column2 .woocommerce-form-register select::-moz-placeholder {
           color: #707070;
           font-size: 16px;
           font-weight: 400;
           font-family: "Poly", serif; }
-        .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input:-ms-input-placeholder, .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register select:-ms-input-placeholder {
+        .page-content .u-columns .u-column2 .woocommerce-form-register input:-ms-input-placeholder, .page-content .u-columns .u-column2 .woocommerce-form-register select:-ms-input-placeholder {
           color: #707070;
           font-size: 16px;
           font-weight: 400;
           font-family: "Poly", serif; }
-        .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input:-moz-placeholder, .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register select:-moz-placeholder {
+        .page-content .u-columns .u-column2 .woocommerce-form-register input:-moz-placeholder, .page-content .u-columns .u-column2 .woocommerce-form-register select:-moz-placeholder {
           color: #707070;
           font-size: 16px;
           font-weight: 400;
           font-family: "Poly", serif; }
-      .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register input[type=file] {
+      .page-content .u-columns .u-column2 .woocommerce-form-register input[type=file] {
         background: transparent !important;
         padding-left: 0 !important; }
-      .login-registration-page .page-content .u-columns .u-column2 .woocommerce-form-register .select2-container {
+      .page-content .u-columns .u-column2 .woocommerce-form-register .select2-container {
         background-color: #E8E8E8 !important;
         color: #707070; }
-    .login-registration-page .page-content .u-columns .u-column2 .woocommerce-FormRow {
+    .page-content .u-columns .u-column2 .woocommerce-FormRow {
       text-align: right; }
-    .login-registration-page .page-content .u-columns .u-column2 .woocommerce-button {
+    .page-content .u-columns .u-column2 .woocommerce-button {
       background-color: #E8E8E8 !important;
       color: #707070 !important;
       cursor: default; }
-  .login-registration-page .page-content .u-columns .woocommerce-input-wrapper .checkbox {
+  .page-content .u-columns .woocommerce-input-wrapper .checkbox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding-left: 25px; }
-    .login-registration-page .page-content .u-columns .woocommerce-input-wrapper .checkbox .input-checkbox {
+    .page-content .u-columns .woocommerce-input-wrapper .checkbox .input-checkbox {
       left: 0px;
       top: 15px; }
-    .login-registration-page .page-content .u-columns .woocommerce-input-wrapper .checkbox .required {
+    .page-content .u-columns .woocommerce-input-wrapper .checkbox .required {
       display: none; }
+
+.page-id-238 .page-content .page-details {
+  max-width: 650px;
+  margin: 0 auto; }
+  .page-id-238 .page-content .page-details h3 {
+    margin-bottom: 30px; }
+  .page-id-238 .page-content .page-details .woocommerce-form {
+    margin-top: 30px; }
+    .page-id-238 .page-content .page-details .woocommerce-form .form-row {
+      width: 100%; }
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row label {
+        display: block; }
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row input.input-text {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.3125;
+        color: #2C241C;
+        padding: 12.5px 15px !important;
+        background: rgba(252, 246, 246, 0.5);
+        border: 0.5px solid #EB9BA2; }
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row input {
+        padding: 10px 20px;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease; }
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row span {
+        font-size: 1rem;
+        line-height: 1.3125;
+        color: #707070;
+        font-weight: 400; }
+    .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper .lost_password a {
+        font-weight: 700;
+        color: #000; }
 
 .logged-in .before-loggin {
   display: none; }

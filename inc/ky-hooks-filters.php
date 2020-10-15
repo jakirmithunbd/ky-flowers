@@ -77,10 +77,17 @@ function ky_before_woocommerce_before_shop_loop() {
                 echo '</ul>
 
                 <div class="mobile-filter visible-xs visible-sm">
-                    <select name="" id="mySelect">
-                        <option data-target="#tab_1">Bunches</option>
-                        <option data-target="#tab_2">Bunches</option>
-                    </select>
+                    <select name="" id="mySelect">';
+                        $quired_object = get_queried_object();
+                        $product_cats = get_terms( $args = array( 'taxonomy' => 'product_cat', 'hide_empty' => false ));
+                        foreach ($product_cats as $product_cat) {
+                        // var_dump($product_cat);
+                        $active = $quired_object->term_id === $product_cat->term_id ? 'selected' : '';
+                        $term_id = $product_cat->term_id;
+                        printf('<option %s value="%s">%s</option>', $active, get_term_link( $term_id ), $product_cat->name);
+                    }
+                        
+                    echo '</select>
                 </div> <div class="tab-content products"><div class="row">';
 }
 
@@ -121,9 +128,9 @@ function ky_woocommerce_template_loop_product_title() {
 
 
 function ky_pricewoocommerce_template_single_price() {
-    echo '<div class="price-wrapper"><span>-</span>';
+    echo '<div class="price-wrapper">';
     woocommerce_template_single_price();
-    echo '<span>-</span></div>';
+    echo '</div>';
 }
 
 function ky_titlewoocommerce_template_single_title() {
@@ -149,7 +156,7 @@ function ky_woocommerce_template_single_meta(){
 }
 
 function ky_woocommerce_template_single_excerpt() {
-    the_excerpt();
+    printf('<p>%s</p>', wp_trim_words(get_the_excerpt(), 10));
     global $product;
     $attributes = $product->get_attributes();
     //var_dump($attributes);
@@ -157,17 +164,43 @@ function ky_woocommerce_template_single_excerpt() {
     ?>
 
     <div class="attributes-wrapper">
-        <?php foreach ( $attributes as $attribute ) : ?>
 
-        <div class="items">
-            <span>-</span>
-            <p><?php //echo $attribute->get_name(); ?></p>
+        <?php 
 
-            <a href="#">Penoy</a>
+        foreach ($product->get_attributes() as $taxonomy => $attribute_obj ) : ?>
 
+            <div class="items">
+                <?php //var_dump($taxonomy) ?>
+
+                <span class="line"></span>
+                <p><span><?php echo wc_attribute_label($taxonomy); ?>: &nbsp;</span></p>
+                <?php $attribute = wc_get_product_terms( $product->id, $taxonomy, array( 'fields' => 'names' ) ) ?>
+
+                <?php foreach ($attribute as $attribute_item) {
+                    // var_dump($attribute_item);
+                    printf('<p>%s</p>, &nbsp;', $attribute_item);
+                } ?>
+            </div>
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
-    </div>
+
+        <div class="ocassions-wrapper">
+            <h5>Occasions:</h5>
+            <div class="ocassion-select">
+                <select name="" id="single-product-select">                
+                    <?php      
+                        $quired_object = get_queried_object();
+                        $product_cats = get_terms( $args = array( 'taxonomy' => 'product_cat', 'hide_empty' => false ));
+                        foreach ($product_cats as $product_cat) {
+                            // var_dump($product_cat);
+                            $active = $quired_object->term_id === $product_cat->term_id ? 'selected' : '';
+                            $term_id = $product_cat->term_id;
+                            printf('<option %s value="%s">%s</option>', $active, get_term_link( $term_id ), $product_cat->name);
+                        } 
+                    ?>
+                </select>
+            </div>
+        </div>
 
     <?php
 

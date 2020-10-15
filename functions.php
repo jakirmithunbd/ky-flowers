@@ -12,6 +12,9 @@ function web_setup_theme(){
 	add_theme_support('custom-logo');
 	add_theme_support('html5', array('search-form', 'comment-list', "editor"));
     add_theme_support('woocommerce');
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 
 	//load text domain
 	load_theme_textdomain('ky', get_template_directory() . '/language');
@@ -60,9 +63,9 @@ function web_setup_assets(){
 
 	//css ===
 	wp_enqueue_style('bootstrap_css', get_theme_file_uri('/assets/css/bootstrap.min.css'));
-	wp_enqueue_style('font-awesome', get_theme_file_uri('/assets/css/font-awesome.min.css'));
-    wp_enqueue_style('animate', get_theme_file_uri('/assets/css/animate.min.css'));
-    wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.min.css'));
+	wp_enqueue_style('font-awesome-css', get_theme_file_uri('/assets/css/all.css'));
+  wp_enqueue_style('animate', get_theme_file_uri('/assets/css/animate.min.css'));
+  wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.min.css'));
 	wp_enqueue_style('main_style', get_theme_file_uri('/assets/css/main-style.css'), null, time());
 	wp_enqueue_style('ky_style', get_stylesheet_uri(), null, time());
 }
@@ -77,23 +80,23 @@ if( function_exists('acf_add_options_page') ) {
 
 /*** Reorder dashboard menu */
 function reorder_admin_menu( $__return_true ) {
-    return array(
-         'index.php',                 // Dashboard
-         'separator1',                // --Space--
-         'acf-options',               // ACF Theme Settings
-         'edit.php?post_type=page',   // Pages 
-         'edit.php',                  // Posts
-         'edit.php?post_type=artist', // artist
-         'separator2',                // --Space--
-         'gf_edit_forms',             // Gravity Forms
-         'upload.php',                // Media
-         'themes.php',                // Appearance
-         'edit-comments.php',         // Comments 
-         'users.php',                 // Users
-         'tools.php',                 // Tools
-         'options-general.php',       // Settings
-         'plugins.php',               // Plugins
-   );
+  return array(
+   'index.php',                 // Dashboard
+   'separator1',                // --Space--
+   'acf-options',               // ACF Theme Settings
+   'edit.php?post_type=page',   // Pages 
+   'edit.php',                  // Posts
+   'edit.php?post_type=artist', // artist
+   'separator2',                // --Space--
+   'gf_edit_forms',             // Gravity Forms
+   'upload.php',                // Media
+   'themes.php',                // Appearance
+   'edit-comments.php',         // Comments 
+   'users.php',                 // Users
+   'tools.php',                 // Tools
+   'options-general.php',       // Settings
+   'plugins.php',               // Plugins
+  );
 }
 add_filter( 'custom_menu_order', 'reorder_admin_menu' );
 add_filter( 'menu_order', 'reorder_admin_menu' );
