@@ -71,6 +71,36 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         ]
     });
 
+
+
+     //  HOME PRODUCT SLIDER
+    $(".product-images-slider").slick({
+        dots: true,
+        // infinite: true,
+        // draggable: true,
+        slidesToShow: 1,
+        // autoplay: true,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.home-product-slider .slider-arrow .fa-caret-left'),
+        nextArrow: $('.home-product-slider .slider-arrow .fa-caret-right'),
+        asNavFor: '.product-info-slider'
+    });
+
+     //  HOME PRODUCT SLIDER nav
+    $(".product-info-slider").slick({
+        dots: false,
+        // infinite: true,
+        // draggable: true,
+        slidesToShow: 1,
+        // autoplay: true,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: '.product-images-slider',
+    });
+
+    
+
     // Product  Silder
     $("#category-list").slick({
         dots: false,
@@ -205,6 +235,8 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
     // });
 
 
+
+
     $('.woocommerce .quantity').on('click', '.qty-plus', function (e) {
         var $inputQty = $(this).parent().find('input.qty');
         var val = parseInt($inputQty.val());
@@ -213,9 +245,18 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         $inputQty.val(val + step).change();
     });
 
+    $('.woocommerce-form .form-row input').on('click', function(){
+        $(this).parent().addClass('show_input');
+    });
+
+    $('.woocommerce-form .form-row input').on('blur', function(){
+        $(this).parent().removeClass('show_input');
+    });
+
+    focusout
+
     
 })(jQuery);
-
 
 
 

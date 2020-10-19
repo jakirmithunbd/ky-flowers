@@ -244,6 +244,16 @@ function bbloomer_separate_registration_form() {
       <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
  
          <?php do_action( 'woocommerce_register_form_start' ); ?>
+
+             <p class="form-row form-row-first">
+            <label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
+            <input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
+            </p>
+          
+            <p class="form-row form-row-last">
+            <label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
+            <input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
+            </p>
  
          <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
  
@@ -274,7 +284,7 @@ function bbloomer_separate_registration_form() {
  
          <?php do_action( 'woocommerce_register_form' ); ?>
  
-         <p class="woocommerce-FormRow form-row">
+         <p class="woocommerce-FormRow form-row register-custom-button text-center">
             <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
             <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
          </p>

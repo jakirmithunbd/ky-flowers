@@ -1518,6 +1518,76 @@ button:hover, button:focus, button:active:focus {
         color: #FCF6F6;
         margin: 0; }
 
+.most-popular-product {
+  padding: 100px 0;
+  background: #FFF8F6; }
+  .most-popular-product .slider-arrow span {
+    cursor: pointer;
+    color: #EB9BA2;
+    font-size: 50px; }
+    .most-popular-product .slider-arrow span.fa-caret-left {
+      left: 0;
+      position: absolute;
+      top: 44%; }
+    .most-popular-product .slider-arrow span.fa-caret-right {
+      right: 0;
+      position: absolute;
+      top: 42%; }
+  .most-popular-product .home-product-slider {
+    position: relative;
+    padding: 0 40px; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider {
+      padding-top: 25%; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item {
+        text-align: center; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .name {
+          color: #2C241C;
+          font-size: 1.5rem;
+          line-height: 1.375;
+          margin-bottom: 40px; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table {
+          margin: 0 auto; }
+          .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr {
+            vertical-align: top; }
+            .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td {
+              padding: 11px;
+              font-size: 1.125rem;
+              line-height: 1.38889;
+              color: #2C241C;
+              font-family: "Poly", serif;
+              text-align: right; }
+              .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td:nth-child(even) {
+                text-align: left;
+                border-left: 1px solid #EB9BA2; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-dots {
+      bottom: -40px; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-list {
+      padding-top: 30px; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img {
+      position: relative;
+      margin-left: 15px;
+      margin-right: 15px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img img {
+        width: 100%;
+        position: relative;
+        z-index: 100;
+        height: 500px;
+        -o-object-fit: cover;
+        object-fit: cover; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before, .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        border: 1px solid #EB9BA2; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before {
+        top: -15px;
+        left: -15px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
+        bottom: 0;
+        right: -15px;
+        height: 97%; }
+
 .reviews {
   padding: 100px 0;
   background: #E5E5E5; }
@@ -3650,18 +3720,19 @@ Cart Page
     .page-content .u-columns .woocommerce-input-wrapper .checkbox .required {
       display: none; }
 
-.page-id-238 .page-content .page-details {
-  max-width: 650px;
-  margin: 0 auto; }
-  .page-id-238 .page-content .page-details h3 {
+.page-id-238 .page-content, .page-id-240 .page-content {
+  max-width: 800px;
+  padding: 30px; }
+  .page-id-238 .page-content .page-details h3, .page-id-240 .page-content .page-details h3 {
     margin-bottom: 30px; }
-  .page-id-238 .page-content .page-details .woocommerce-form {
-    margin-top: 30px; }
-    .page-id-238 .page-content .page-details .woocommerce-form .form-row {
+  .page-id-238 .page-content .page-details .woocommerce-form, .page-id-240 .page-content .page-details .woocommerce-form {
+    max-width: 540px;
+    margin: 30px auto 0; }
+    .page-id-238 .page-content .page-details .woocommerce-form .form-row, .page-id-240 .page-content .page-details .woocommerce-form .form-row {
       width: 100%; }
-      .page-id-238 .page-content .page-details .woocommerce-form .form-row label {
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row label, .page-id-240 .page-content .page-details .woocommerce-form .form-row label {
         display: block; }
-      .page-id-238 .page-content .page-details .woocommerce-form .form-row input.input-text {
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row input.input-text, .page-id-240 .page-content .page-details .woocommerce-form .form-row input.input-text {
         width: 100%;
         font-size: 1rem;
         line-height: 1.3125;
@@ -3669,25 +3740,44 @@ Cart Page
         padding: 12.5px 15px !important;
         background: rgba(252, 246, 246, 0.5);
         border: 0.5px solid #EB9BA2; }
-      .page-id-238 .page-content .page-details .woocommerce-form .form-row input {
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row input, .page-id-240 .page-content .page-details .woocommerce-form .form-row input {
         padding: 10px 20px;
         -webkit-transition: all .3s ease;
         -o-transition: all .3s ease;
         transition: all .3s ease; }
-      .page-id-238 .page-content .page-details .woocommerce-form .form-row span {
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row span, .page-id-240 .page-content .page-details .woocommerce-form .form-row span {
         font-size: 1rem;
         line-height: 1.3125;
         color: #707070;
         font-weight: 400; }
-    .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper {
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row .woocommerce-form-login__rememberme, .page-id-240 .page-content .page-details .woocommerce-form .form-row .woocommerce-form-login__rememberme {
+        top: 60px;
+        left: 0;
+        color: #2C241C;
+        font-size: 1rem;
+        line-height: 1.1875; }
+      .page-id-238 .page-content .page-details .woocommerce-form .form-row .button, .page-id-240 .page-content .page-details .woocommerce-form .form-row .button {
+        width: 100%;
+        max-width: 125px;
+        margin-left: 57px; }
+    .page-id-238 .page-content .page-details .woocommerce-form .lost_password, .page-id-240 .page-content .page-details .woocommerce-form .lost_password {
+      float: right;
+      width: auto; }
+      .page-id-238 .page-content .page-details .woocommerce-form .lost_password a, .page-id-240 .page-content .page-details .woocommerce-form .lost_password a {
+        color: #2C241C;
+        font-size: 1rem;
+        line-height: 1.1875; }
+    .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper, .page-id-240 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper .lost_password a {
+      .page-id-238 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper .lost_password a, .page-id-240 .page-content .page-details .woocommerce-form .input-field-lost-pass-wrapper .lost_password a {
         font-weight: 700;
         color: #000; }
+    .page-id-238 .page-content .page-details .woocommerce-form.woocommerce-form-register .button, .page-id-240 .page-content .page-details .woocommerce-form.woocommerce-form-register .button {
+      max-width: 160px; }
 
 .logged-in .before-loggin {
   display: none; }
@@ -3707,6 +3797,39 @@ Cart Page
 /****************************************************************************************
 *                               WOOCOMERCE FORM
 ****************************************************************************************/
+.woocommerce-form .form-row label {
+  font-weight: 400;
+  color: #2C241C;
+  font-size: 1rem;
+  line-height: 1.1875;
+  position: relative;
+  top: 37px;
+  left: 20px;
+  display: inline-block !important;
+  position: relative;
+  top: 34px;
+  left: 20px;
+  width: auto;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+.woocommerce-form .form-row.show_input label {
+  top: 12px !important;
+  background: #fff; }
+
+.woocommerce-form .form-row input {
+  font-weight: 400;
+  color: #2C241C;
+  font-size: 1rem;
+  line-height: 1.1875; }
+  .woocommerce-form .form-row input:focus {
+    background: #fff !important; }
+
+.woocommerce-form .form-row input:focus ~ label,
+.woocommerce-form .form-row input:not(:focus):valid ~ label {
+  top: 12px !important; }
+
 /****************************************************************************************
 *                               Pricing filter widget
 ****************************************************************************************/

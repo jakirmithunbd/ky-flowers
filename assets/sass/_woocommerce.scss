@@ -2527,20 +2527,21 @@ Cart Page
 }
 
 
-.page-id-238 {
+.page-id-238, .page-id-240 {
 
     .page-content {
+        max-width: 800px;
+        padding: 30px;
 
         .page-details {
-            max-width: 650px;
-            margin: 0 auto;
 
             h3 {
                 margin-bottom: 30px;
             }
 
             .woocommerce-form {
-                margin-top: 30px;
+                max-width: 540px;
+                margin: 30px auto 0;
 
                 .form-row {
                     width: 100%;
@@ -2568,6 +2569,29 @@ Cart Page
                         color: #707070;
                         font-weight: 400;
                     }
+
+                    .woocommerce-form-login__rememberme {
+                        top: 60px;
+                        left: 0;
+                        color: #2C241C;
+                        @include em(16px, 19px);
+                    }
+
+                    .button {
+                        width: 100%;
+                        max-width: 125px;
+                        margin-left: 57px;
+                    }
+                }
+
+                .lost_password {
+                    float: right;
+                    width: auto;
+
+                    a {
+                        color: #2C241C;
+                        @include em(16px, 19px);
+                    }
                 }
 
                 .input-field-lost-pass-wrapper {
@@ -2580,6 +2604,13 @@ Cart Page
                             font-weight: 700;
                             color: #000;
                         }
+                    }
+                }
+
+                &.woocommerce-form-register {
+
+                    .button {
+                        max-width: 160px; 
                     }
                 }
             }
@@ -2622,11 +2653,44 @@ Cart Page
     .form-row {
 
         label {
+            font-weight: 400;
+            color: #2C241C;
+            @include em(16px, 19px);
+            position: relative;
+            top: 37px;
+            left: 20px;
+            display: inline-block !important;
+            position: relative;
+            top: 34px;
+            left: 20px;
+            width: auto;
+            transition: all .3s ease;
+        }
 
+        &.show_input {
+            
+            label {
+                top: 12px !important;
+                background: #fff;
+            }
         }
 
         input {
+            font-weight: 400;
+            color: #2C241C;
+            @include em(16px, 19px);
+
+            &:focus {
+                background: #fff !important;
             
+               + label {
+                }
+            }
+        }
+
+        input:focus ~ label,
+        input:not(:focus):valid ~ label {
+            top: 12px !important;
         }
     }
 }
