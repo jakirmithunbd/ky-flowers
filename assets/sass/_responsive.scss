@@ -271,6 +271,20 @@
         padding: 60px 0;
     }
 
+    .most-popular-product {
+        padding: 60px 0;
+
+        .home-product-slider {
+
+            .sliders-wrapper {
+
+                .product-info-slider {
+                    padding-top: 15%;
+                }
+            }
+        }
+    }
+
     /*************************************************
     *                      ABOUT PAGE 
     **************************************************/ 
@@ -341,6 +355,19 @@
                 &:nth-child(2) {
                     border-right: 0;
                     border-bottom: 0.5px solid #EB9BA2;
+                }
+            }
+        }
+    }
+
+    .most-popular-product {
+
+        .home-product-slider {
+
+            .sliders-wrapper {
+
+                .product-info-slider {
+                    padding: 5% 0;
                 }
             }
         }
@@ -489,6 +516,29 @@
 
                 .occasions {
                     margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    .most-popular-product {
+
+        .home-product-slider {
+
+            .sliders-wrapper {
+                
+                .product-images-slider {
+
+                    .product-info-slider {
+                        padding: 0 0 20px;
+                    }
+
+                    .product-img {
+
+                        img {
+                            height: auto;
+                        }
+                    }
                 }
             }
         }

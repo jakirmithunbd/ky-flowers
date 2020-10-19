@@ -164,7 +164,7 @@ input[type="number"] {
 }
 
 .container {
-    max-width: 1380px;
+    max-width: 1170px;
     margin: 0 auto;
     width: 100%;
 }
@@ -475,6 +475,7 @@ button {
         .header_right-menu {
             display: flex;
             align-items: center;
+            position: relative;
 
             .right-items {
                 margin: 0 15px;

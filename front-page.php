@@ -161,6 +161,66 @@ $sliders = get_field('sliders');
 	    </div>
 	</section>
 
+	<section class="most-popular-product">
+        <div class="container">
+
+			<?php $popular_pro_section_title = get_field('popular_pro_section_title'); ?>
+	        <div class="row">
+	            <div class="col-md-12">
+	                <div class="section-title text-center">
+	                    <h2 class="wow fadeInUp"><?php echo $popular_pro_section_title['title']; ?></h2>
+	                    <p class="wow fadeInUp"><?php echo $popular_pro_section_title['description']; ?></p>
+	                </div>
+	            </div>
+	        </div>
+
+            <div class="home-product-slider">
+                <div class="slider-arrow"><span class="fas fa-caret-left"></span></div>
+
+                <div class="sliders-wrapper row">
+                    <div class="col-md-6">
+                        <div class="product-info-slider">
+                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; $price = get_post_meta( $product_id, '_regular_price', true); ?>
+	                            <div class="info-item">
+	                                <h3 class="name"><?php echo get_the_title( $product_id ); ?></h3>
+
+	                                <table>
+	                                    <tr>
+	                                        <td>Occasions: </td>
+	                                        <td><?php echo wc_get_product_tag_list( $product_id, ', ' ); ?></td>
+	                                    </tr>
+
+	                                    <tr>
+	                                        <td>Posible Colors: </td>
+	                                        <td>White <br> Pink <br> Pink</td>
+	                                    </tr>
+
+	                                    <tr>
+	                                        <td>Price: </td>
+	                                        <td><?php echo $price ?> </td>
+	                                    </tr>
+	                                </table>
+	                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="product-images-slider">
+                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; ?>
+                            <div class="product-img">
+                                <img src="<?php echo get_the_post_thumbnail_url($product_id); ?>" alt="">
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-arrow"><span class="fas fa-caret-right"></span></div>
+            </div>
+        </div>
+    </section>
+
 	<section class="reviews">
 	    <div class="container">
 
