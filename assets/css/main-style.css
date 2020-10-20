@@ -3269,7 +3269,7 @@ Cart Page
         text-transform: uppercase;
         font-weight: 400 !important;
         background: #EB9BA2 !important;
-        max-width: 240px;
+        max-width: 100%;
         margin: 0 auto;
         width: 100%;
         display: block;
