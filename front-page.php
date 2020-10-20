@@ -180,26 +180,36 @@ $sliders = get_field('sliders');
                 <div class="sliders-wrapper row">
                     <div class="col-md-6">
                         <div class="product-info-slider">
-                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; $price = get_post_meta( $product_id, '_regular_price', true); ?>
+                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; $price = get_post_meta( $product_id, '_regular_price', true); 
+                        		$color_attributes = wp_list_pluck( get_the_terms( $product_id, 'pa_flower-color' ), 'name' );
+                        	?>
 	                            <div class="info-item">
 	                                <h3 class="name"><?php echo get_the_title( $product_id ); ?></h3>
 
 	                                <table>
 	                                    <tr>
 	                                        <td>Occasions: </td>
-	                                        <td><?php echo wc_get_product_tag_list( $product_id, ', ' ); ?></td>
+	                                        <td style="font-size: 0;"><?php echo wc_get_product_tag_list( $product_id, ', ' ); ?></td>
 	                                    </tr>
 
 	                                    <tr>
 	                                        <td>Posible Colors: </td>
-	                                        <td>White <br> Pink <br> Pink</td>
+	                                        <td>
+	                                        <?php foreach ($color_attributes as $color_attribute) {
+	                                        	echo $color_attribute . "<br>";
+	                                        } ?>
+	                                        </td>
 	                                    </tr>
 
 	                                    <tr>
 	                                        <td>Price: </td>
-	                                        <td><?php echo $price ?> </td>
+	                                        <td><?php printf('<span>%s</span> %s', get_woocommerce_currency_symbol(), $price); ?> </td>
 	                                    </tr>
 	                                </table>
+
+	                                <div class="bottom-part">
+	                                	<a class="btn" href="<?php echo site_url()?>/?add-to-cart=<?php echo $product_id; ?>"><?php _e('Add to cart', 'fl');?> <img src="<?php echo get_theme_file_uri( '/assets/images/cart.png' ); ?>" alt=""></a>
+	                                </div>
 	                            </div>
                             <?php endforeach; ?>
                         </div>

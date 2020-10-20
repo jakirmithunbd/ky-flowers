@@ -447,7 +447,7 @@ button {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1024;
+    z-index: 99999;
     padding: 20px 0;
     position: fixed;
     background-color: transparent;
@@ -1213,11 +1213,36 @@ button {
                                 font-family: $poly;
                                 text-align: right;
 
+                                a {
+                                    @include em(18px, 25px);
+                                    color: #2C241C;
+                                    font-family: $poly;
+                                    transition: all .3s ease;
+                                    display: block;
+
+                                    &:hover, &:focus {
+                                        text-decoration: underline;
+                                        color: $primary;
+                                    }
+                                }
+
                                 &:nth-child(even){
                                     text-align: left;
                                     border-left: 1px solid $primary;
                                 }
                             }
+                        }
+                    }
+
+                    .bottom-part {
+
+                        .btn {
+                            max-width: 202px;
+                            width: 100%;
+                            margin: 30px auto 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
                     }
                 }
@@ -1877,7 +1902,7 @@ button {
 
 /*********************************** WOOCOMMERCE **********************************/ 
 .page-content {
-    padding: 60px 0;
+    padding: 60px 0 !important;
 }
 
 @import "woocommerce";

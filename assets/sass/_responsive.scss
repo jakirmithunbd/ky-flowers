@@ -49,7 +49,7 @@
         display: block;
         border: 0;
         background-color: #fff;
-        padding: 5px 15px;
+        padding: 0px 10px 4px 12px;
         transition: all .3s ease;
         border-radius: 0;
         font-size: 1.3rem;
@@ -460,6 +460,25 @@
             }
         }
     }
+
+    .woocommerce-checkout {
+
+        .woocommerce {
+
+            form.woocommerce-checkout {
+
+                .col2-set {
+                    width: 100% !important;
+                    margin-bottom: 20px;
+                }
+
+                .woocommerce-checkout-review-order {
+                    width: 100% !important;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -486,6 +505,10 @@
 @media only screen and (max-width: 767px) {
     .btn {
         padding: 12px 25px;
+    }
+
+    .page-content {
+        padding: 40px 0 !important;
     }
 
     .home-banner {
@@ -631,6 +654,62 @@
 
     .footer {
         padding: 40px 0;
+    }
+
+    .woocommerce-cart {
+
+        table.shop_table {
+
+            tbody {
+
+                tr {
+                    display: block !important;
+                }
+
+                td {
+                    text-align: left !important;
+                    width: 100%;
+                    max-width: 100% !important;
+                    padding: 0 !important;
+                    margin-top: 20px !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    &.product-thumbnail {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+
+        .cart-collaterals {
+
+            .cart_totals {
+
+                table.shop_table {
+                    max-width: 100%;
+
+                    tr.order-total {
+
+                        td {
+                            margin: 0 !important;
+                            padding: 10px 20px !important;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .wc-proceed-to-checkout {
+                margin: 0;
+
+                a {
+                    margin: 15px auto 0 !important;
+                }
+            }
+        }
     }
 }
 
