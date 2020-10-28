@@ -1311,7 +1311,7 @@ button:hover, button:focus, button:active:focus {
         padding: 0 15px;
         position: relative;
         z-index: 100;
-        max-width: 550px; }
+        max-width: 580px; }
         .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content p {
           color: #FCF6F6;
           font-size: 2.25rem;
@@ -1369,8 +1369,7 @@ button:hover, button:focus, button:active:focus {
         line-height: 1; }
 
 .why-choose-us {
-  padding: 120px 0;
-  background: #E5E5E5; }
+  padding: 120px 0; }
   .why-choose-us .container {
     max-width: 1250px; }
   .why-choose-us .features .items {
@@ -1451,6 +1450,9 @@ button:hover, button:focus, button:active:focus {
           background: rgba(44, 36, 28, 0.53);
           border: 1px solid #DAB9B9;
           border-radius: 5px; }
+          .product-category .category-list .category .cat-img .hover-content .btn:hover, .product-category .category-list .category .cat-img .hover-content .btn:focus {
+            background: #EB9BA2;
+            color: #fff; }
         .product-category .category-list .category .cat-img .hover-content hr {
           border-color: #EB9BA2;
           margin: 70px 0; }
@@ -1520,8 +1522,7 @@ button:hover, button:focus, button:active:focus {
         margin: 0; }
 
 .most-popular-product {
-  padding: 100px 0;
-  background: #FFF8F6; }
+  padding: 100px 0; }
   .most-popular-product .slider-arrow span {
     cursor: pointer;
     color: #EB9BA2;
@@ -1537,86 +1538,96 @@ button:hover, button:focus, button:active:focus {
   .most-popular-product .home-product-slider {
     position: relative;
     padding: 0 40px; }
-    .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider {
-      padding-top: 25%; }
-      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item {
-        text-align: center; }
-        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .name {
-          color: #2C241C;
-          font-size: 1.5rem;
-          line-height: 1.375;
-          margin-bottom: 40px; }
-        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table {
-          margin: 0 auto; }
-          .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr {
-            vertical-align: top; }
-            .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td {
-              padding: 11px;
+    .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item {
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-bottom: 40px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .content {
+        width: 50%; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .name {
+        color: #2C241C;
+        font-size: 1.5rem;
+        line-height: 1.375;
+        margin-bottom: 40px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table {
+        margin: 0 auto; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr {
+          vertical-align: top; }
+          .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td {
+            padding: 11px;
+            font-size: 1.125rem;
+            line-height: 1.38889;
+            color: #2C241C;
+            font-family: "Poly", serif;
+            text-align: right; }
+            .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a {
               font-size: 1.125rem;
               line-height: 1.38889;
               color: #2C241C;
               font-family: "Poly", serif;
-              text-align: right; }
-              .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a {
-                font-size: 1.125rem;
-                line-height: 1.38889;
-                color: #2C241C;
-                font-family: "Poly", serif;
-                -webkit-transition: all .3s ease;
-                -o-transition: all .3s ease;
-                transition: all .3s ease;
-                display: block; }
-                .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a:hover, .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a:focus {
-                  text-decoration: underline;
-                  color: #EB9BA2; }
-              .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td:nth-child(even) {
-                text-align: left;
-                border-left: 1px solid #EB9BA2; }
-        .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .bottom-part .btn {
-          max-width: 202px;
-          width: 100%;
-          margin: 30px auto 0;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center; }
-    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-dots {
-      bottom: -40px; }
-    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-list {
-      padding-top: 30px; }
-    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img {
-      position: relative;
-      margin-left: 15px;
-      margin-right: 15px; }
-      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img img {
+              -webkit-transition: all .3s ease;
+              -o-transition: all .3s ease;
+              transition: all .3s ease;
+              display: block; }
+              .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a:hover, .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td a:focus {
+                text-decoration: underline;
+                color: #EB9BA2; }
+            .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item table tr td:nth-child(even) {
+              text-align: left;
+              border-left: 1px solid #EB9BA2; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .bottom-part .btn {
+        max-width: 202px;
         width: 100%;
+        margin: 40px auto 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider {
+      width: 50%; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-dots {
+        bottom: -40px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .slick-list {
+        padding-top: 30px; }
+      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img {
         position: relative;
-        z-index: 100;
-        height: 500px;
-        -o-object-fit: cover;
-        object-fit: cover; }
-      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before, .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
-        position: absolute;
-        content: "";
-        height: 100%;
-        width: 100%;
-        border: 1px solid #EB9BA2; }
-      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before {
-        top: -15px;
-        left: -15px; }
-      .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
-        bottom: 0;
-        right: -15px;
-        height: 97%; }
+        margin-left: 15px;
+        margin-right: 15px; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img img {
+          width: 100%;
+          position: relative;
+          z-index: 100;
+          height: 500px;
+          -o-object-fit: cover;
+          object-fit: cover; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before, .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
+          position: absolute;
+          content: "";
+          height: 100%;
+          width: 100%;
+          border: 1px solid #EB9BA2; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:before {
+          top: -15px;
+          left: -15px; }
+        .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-img:after {
+          bottom: 0;
+          right: -15px;
+          height: 97%; }
 
 .reviews {
-  padding: 100px 0;
-  background: #E5E5E5; }
+  padding: 100px 0; }
   .reviews .section-title {
     margin-bottom: 100px; }
   .reviews .reviews-slider-wrapper img {
@@ -4215,7 +4226,13 @@ Cart Page
     .contact-form-wrapper .contact-form {
       margin-top: 30px; }
       .contact-form-wrapper .contact-form form textarea {
-        margin-bottom: 25px; } }
+        margin-bottom: 25px; }
+  .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item {
+    display: block; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .content {
+      width: 100%; }
+    .most-popular-product .home-product-slider .sliders-wrapper .product-info-slider .info-item .product-images-slider {
+      width: 100%; } }
 
 @media only screen and (max-width: 767px) {
   .btn {

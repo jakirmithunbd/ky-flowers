@@ -890,7 +890,7 @@ button {
                 padding: 0 15px;
                 position: relative;
                 z-index: 100;
-                max-width: 550px;
+                max-width: 580px;
 
                 p {
                     color: #FCF6F6;  
@@ -959,7 +959,6 @@ button {
 
 .why-choose-us {
     padding: 120px 0;
-    background: #E5E5E5;
 
     .container {
         max-width: 1250px;
@@ -1054,6 +1053,11 @@ button {
                         background: rgba(44, 36, 28, 0.53);
                         border: 1px solid #DAB9B9;
                         border-radius: 5px;
+
+                        &:hover, &:focus {
+                            background: $primary;
+                            color: #fff;
+                        }
                     }
 
                     hr {
@@ -1159,7 +1163,6 @@ button {
 
 .most-popular-product {
     padding: 100px 0;
-    background: #FFF8F6;
 
     .slider-arrow {
 
@@ -1189,10 +1192,17 @@ button {
         .sliders-wrapper {
 
             .product-info-slider {
-                padding-top: 25%;
 
                 .info-item {
                     text-align: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    padding-bottom: 40px;
+
+                    .content {
+                        width: 50%;
+                    }
 
                     .name {
                         color: #2C241C;
@@ -1239,7 +1249,7 @@ button {
                         .btn {
                             max-width: 202px;
                             width: 100%;
-                            margin: 30px auto 0;
+                            margin: 40px auto 0;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -1249,6 +1259,7 @@ button {
             }
 
             .product-images-slider {
+                width: 50%;
 
                 .slick-dots {
                     bottom: -40px;
@@ -1298,7 +1309,6 @@ button {
 
 .reviews {
     padding: 100px 0;
-    background: #E5E5E5;
 
     .section-title {
         margin-bottom: 100px;

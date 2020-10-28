@@ -500,6 +500,30 @@
             }
         }
     }
+
+    .most-popular-product {
+
+        .home-product-slider {
+
+            .sliders-wrapper {
+
+                .product-info-slider {
+
+                    .info-item {
+                        display: block;
+
+                        .content {
+                            width: 100%;
+                        }
+
+                        .product-images-slider {
+                            width: 100%;
+                        }
+                    } 
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 767px) {

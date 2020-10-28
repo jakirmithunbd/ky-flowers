@@ -177,13 +177,14 @@ $sliders = get_field('sliders');
             <div class="home-product-slider">
                 <div class="slider-arrow"><span class="fas fa-caret-left"></span></div>
 
-                <div class="sliders-wrapper row">
-                    <div class="col-md-6">
+                <div class="sliders-wrapper">
+                   
                         <div class="product-info-slider">
                         	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; $price = get_post_meta( $product_id, '_regular_price', true); 
                         		$color_attributes = wp_list_pluck( get_the_terms( $product_id, 'pa_flower-color' ), 'name' );
                         	?>
 	                            <div class="info-item">
+	                            	<div class="content">
 	                                <h3 class="name"><?php echo get_the_title( $product_id ); ?></h3>
 
 	                                <table>
@@ -211,19 +212,24 @@ $sliders = get_field('sliders');
 	                                	<a class="btn" href="<?php echo site_url()?>/?add-to-cart=<?php echo $product_id; ?>"><?php _e('Add to cart', 'fl');?> <img src="<?php echo get_theme_file_uri( '/assets/images/cart.png' ); ?>" alt=""></a>
 	                                </div>
 	                            </div>
+
+	                                <div class="product-images-slider">
+			                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; $product = new WC_product($product_id);
+			                            	$attachment_ids = $product->get_gallery_image_ids();
+
+										    foreach( $attachment_ids as $attachment_id ) {
+										    	printf('<div class="product-img"><img src="%s" alt=""></div>', wp_get_attachment_url( $attachment_id ));
+										    } ?>
+			                            <?php endforeach; ?>
+			                        </div>
+	                            </div>
+
+	                            
                             <?php endforeach; ?>
-                        </div>
+                        
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="product-images-slider">
-                        	<?php $products = get_field('select_product'); foreach ($products as $product): $product_id = $product->ID; ?>
-                            <div class="product-img">
-                                <img src="<?php echo get_the_post_thumbnail_url($product_id); ?>" alt="">
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div class="slider-arrow"><span class="fas fa-caret-right"></span></div>

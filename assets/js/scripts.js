@@ -81,22 +81,24 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         slidesToShow: 1,
         // autoplay: true,
         slidesToScroll: 1,
-        arrows: true,
-        prevArrow: $('.home-product-slider .slider-arrow .fa-caret-left'),
-        nextArrow: $('.home-product-slider .slider-arrow .fa-caret-right'),
-        asNavFor: '.product-info-slider'
+        arrows: false,
+        adaptiveHeight: true
+        // asNavFor: '.product-info-slider'
     });
 
      //  HOME PRODUCT SLIDER nav
     $(".product-info-slider").slick({
         dots: false,
         // infinite: true,
-        // draggable: true,
+        draggable: false,
         slidesToShow: 1,
         // autoplay: true,
         slidesToScroll: 1,
-        arrows: false,
-        asNavFor: '.product-images-slider',
+        arrows: true,
+        // asNavFor: '.product-images-slider',
+        prevArrow: $('.home-product-slider .slider-arrow .fa-caret-left'),
+        nextArrow: $('.home-product-slider .slider-arrow .fa-caret-right'),
+        adaptiveHeight: true
     });
 
     
