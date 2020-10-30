@@ -1319,6 +1319,22 @@ button:hover, button:focus, button:active:focus {
           letter-spacing: 0.11em;
           font-family: "Prata", serif;
           margin-bottom: 30px; }
+          .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content p span {
+            position: relative; }
+            .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content p span:after {
+              position: absolute;
+              content: attr(data-title);
+              bottom: -25px;
+              left: 0;
+              font-weight: 700;
+              background: -webkit-gradient(linear, left top, left bottom, from(rgba(235, 155, 162, 0)), to(#EB9BA2));
+              background: -webkit-linear-gradient(top, rgba(235, 155, 162, 0) 0%, #EB9BA2 100%);
+              background: -o-linear-gradient(top, rgba(235, 155, 162, 0) 0%, #EB9BA2 100%);
+              background: linear-gradient(180deg, rgba(235, 155, 162, 0) 0%, #EB9BA2 100%);
+              -webkit-transform: rotateX(-180deg);
+              transform: rotateX(-180deg);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent; }
         .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content .buttons .btn:last-child {
           margin-left: 30px;
           color: #DAB9B9;
