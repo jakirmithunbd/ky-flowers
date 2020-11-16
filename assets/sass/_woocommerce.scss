@@ -2044,6 +2044,10 @@ Cart Page
 ****************************************************************************************/ 
 .single-product {
 
+    .product, .woocommerce-breadcrumb {
+        padding: 0 15px;
+    }
+
     .shop-page-wrapper {
 
         .col-md-2 {
@@ -2120,6 +2124,7 @@ Cart Page
             .items {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 .line {
                     display: block;

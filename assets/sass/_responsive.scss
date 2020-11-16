@@ -479,6 +479,18 @@
             }
         }
     }
+
+    .product {
+
+        .summary {
+
+            .tinv-wraper.tinv-wishlist {
+                float: none;
+                top: 0;
+                margin-top: 10px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -646,7 +658,7 @@
     }
 
     .firm {
-        padding: 40px 0 80px;
+        padding: 40px 0;
     }
 
     .modern-approach {
@@ -735,6 +747,22 @@
             }
         }
     }
+
+    .product {
+
+        .summary {
+
+            .attributes-wrapper {
+
+                .items {
+
+                    .line {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -744,6 +772,10 @@
         .slick-dots {
             bottom: 60px;
         }
+    }
+
+    .page-banner {
+        padding: 200px 0 35px;
     }
 }
 
