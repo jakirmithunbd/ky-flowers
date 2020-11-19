@@ -1145,7 +1145,7 @@ button:hover, button:focus, button:active:focus {
           justify-content: space-between;
 }
 .header .navbar-wrapper .navbar-collapse {
-  padding-right: 0;
+  padding: 0;
 }
 .header .navbar-wrapper .middle-logo {
   display: block;
@@ -1253,27 +1253,11 @@ button:hover, button:focus, button:active:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.header .navbar .navbar-nav > li > a:before {
-  position: absolute;
-  content: "";
-  height: 7px;
-  width: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  opacity: 0;
-  -webkit-box-shadow: inset 0px 0px 0px 2px #fff;
-          box-shadow: inset 0px 0px 0px 2px #fff;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 .header .navbar .navbar-nav > li > a i {
   margin-right: 10px;
 }
 .header .navbar .navbar-nav > li.active a, .header .navbar .navbar-nav > li:hover a, .header .navbar .navbar-nav > li:focus a {
-  color: #fff;
+  color: #EB9BA2;
   background-color: transparent;
 }
 .header .navbar .navbar-nav > li.active a:before, .header .navbar .navbar-nav > li:hover a:before, .header .navbar .navbar-nav > li:focus a:before {
@@ -1292,6 +1276,15 @@ button:hover, button:focus, button:active:focus {
   font-family: "Font Awesome 5 free";
   font-weight: 900;
   line-height: 1;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header .navbar .navbar-nav > li.dropdown > a.active, .header .navbar .navbar-nav > li.dropdown > a:hover, .header .navbar .navbar-nav > li.dropdown > a:focus {
+  color: #EB9BA2;
+}
+.header .navbar .navbar-nav > li.dropdown > a.active:after, .header .navbar .navbar-nav > li.dropdown > a:hover:after, .header .navbar .navbar-nav > li.dropdown > a:focus:after {
+  color: #EB9BA2;
 }
 .header .navbar .navbar-nav > li.open a {
   color: #fff;
@@ -1316,8 +1309,11 @@ button:hover, button:focus, button:active:focus {
   font-size: 0.875rem;
   line-height: 1.4285714286;
 }
-.header .navbar .navbar-nav > li.open .dropdown-menu li.active a {
+.header .navbar .navbar-nav > li.open .dropdown-menu li.active a, .header .navbar .navbar-nav > li.open .dropdown-menu li:hover a, .header .navbar .navbar-nav > li.open .dropdown-menu li:focus a {
   color: #EB9BA2;
+}
+.header .navbar .navbar-nav > li:first-child a {
+  padding-left: 0;
 }
 .header .navbar .navbar-nav .open > a {
   background: transparent !important;
@@ -1354,7 +1350,7 @@ button:hover, button:focus, button:active:focus {
   content: "";
   height: 15px;
   width: 15px;
-  background: #fff;
+  background: #FCF5F5;
   top: -8px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -1602,7 +1598,7 @@ button:hover, button:focus, button:active:focus {
   bottom: 120px;
   width: 100%;
   left: 0;
-  max-width: 1340px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 .home-slider-wrapper .counter-wrapper .slider-arrows-counter {

@@ -55,7 +55,7 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         // infinite: true,
         // draggable: true,
         slidesToShow: 1,
-        // autoplay: true,
+        autoplay: true,
         slidesToScroll: 1,
         arrows: false,
         responsive: [
@@ -79,11 +79,10 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         // infinite: true,
         // draggable: true,
         slidesToShow: 1,
-        // autoplay: true,
+        autoplay: true,
         slidesToScroll: 1,
         arrows: false,
         adaptiveHeight: true
-        // asNavFor: '.product-info-slider'
     });
 
      //  HOME PRODUCT SLIDER nav
@@ -92,10 +91,9 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         // infinite: true,
         draggable: false,
         slidesToShow: 1,
-        // autoplay: true,
+        autoplay: true,
         slidesToScroll: 1,
         arrows: true,
-        // asNavFor: '.product-images-slider',
         prevArrow: $('.home-product-slider .slider-arrow .fa-caret-left'),
         nextArrow: $('.home-product-slider .slider-arrow .fa-caret-right'),
         adaptiveHeight: true
@@ -109,7 +107,7 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         // infinite: true,
         // draggable: true,
         slidesToShow: 4,
-        // autoplay: true,
+        autoplay: true,
         slidesToScroll: 1,
         arrows: true,
         prevArrow: $('.category-slider-wrapper .prev'),
@@ -162,9 +160,9 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         adaptiveHeight: true,
         slidesToScroll: 1,
         fade: true,
-        arrows: false,
-        // prevArrow: $('.slider-arrows-counter .fa-caret-left'),
-        // nextArrow: $('.slider-arrows-counter .fa-caret-right'),
+        arrows: true,
+        prevArrow: $('.slider-arrows-counter .fa-caret-left'),
+        nextArrow: $('.slider-arrows-counter .fa-caret-right'),
     });
 
 

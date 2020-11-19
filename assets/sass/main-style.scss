@@ -459,7 +459,7 @@ button {
         justify-content: space-between;
 
         .navbar-collapse {
-            padding-right: 0;
+            padding: 0;
         }
 
         .middle-logo {
@@ -572,20 +572,6 @@ button {
                     padding: 20px 25px;
                     transition: all .3s ease;
 
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        height: 7px;
-                        width: 0;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        margin: 0 auto;
-                        opacity: 0;
-                        box-shadow: inset 0px 0px 0px 2px #fff;
-                        transition: all .3s ease;
-                    }
-
                     i {
                         margin-right: 10px;
                     }
@@ -594,7 +580,7 @@ button {
                 &.active, &:hover, &:focus {
 
                     a {
-                        color: #fff;
+                        color: $primary;
                         background-color: transparent;
 
                         &:before {
@@ -618,6 +604,15 @@ button {
                             font-family: "Font Awesome 5 free";
                             font-weight: 900;
                             line-height: 1;
+                            transition: all .3s ease;
+                        }
+
+                        &.active, &:hover, &:focus {
+                            color: $primary;
+                            
+                            &:after {
+                                color: $primary;
+                            }
                         }
                     }
                 }
@@ -647,13 +642,21 @@ button {
                                 @include em(14px, 20px);
                             }
 
-                            &.active {
+                            
+                        &.active, &:hover, &:focus {
 
                                 a { 
                                     color: $primary;
                                 }
                             }
                         }
+                    }
+                }
+
+                &:first-child {
+
+                    a {
+                        padding-left: 0;
                     }
                 }
             }
@@ -701,7 +704,7 @@ button {
         content: "";
         height: 15px;
         width: 15px;
-        background: #fff;
+        background: #FCF5F5;
         top: -8px;
         transform: rotate(45deg);
         left: 20px;
@@ -946,7 +949,7 @@ button {
         bottom: 120px;
         width: 100%;
         left: 0;
-        max-width: 1340px;
+        max-width: 1170px;
         margin: 0 auto; 
 
         .slider-arrows-counter {
