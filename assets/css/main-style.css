@@ -1147,8 +1147,15 @@ button:hover, button:focus, button:active:focus {
 .header .navbar-wrapper .navbar-collapse {
   padding: 0;
 }
+.header .navbar-wrapper .logo-area {
+  height: 80px;
+  overflow: hidden;
+}
 .header .navbar-wrapper .middle-logo {
   display: block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .header .navbar-wrapper .middle-logo img {
   max-width: 100%;
@@ -1325,11 +1332,21 @@ button:hover, button:focus, button:active:focus {
 }
 .header.sticky {
   padding: 2px 0;
-  background: #000;
+  background: #2C241C;
   -webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
-  -ms-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
+  -ms-box-shadow: 0 0px 12px rgba(87, 49, 49, 0.16);
   -o-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.2);
+}
+.header.sticky .navbar-wrapper .logo-area .not-sticky {
+  -webkit-transform: translateY(-70px);
+      -ms-transform: translateY(-70px);
+          transform: translateY(-70px);
+}
+.header.sticky .navbar-wrapper .logo-area .in-sticky {
+  -webkit-transform: translateY(-60px);
+      -ms-transform: translateY(-60px);
+          transform: translateY(-60px);
 }
 .header.sticky .middle-logo img {
   max-width: 80%;
@@ -1541,7 +1558,6 @@ button:hover, button:focus, button:active:focus {
           justify-content: space-between;
 }
 .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content {
-  padding: 0 15px;
   position: relative;
   z-index: 100;
   max-width: 580px;

@@ -22,6 +22,7 @@
     <?php 
     $queried_object = get_queried_object();
     $logo = get_field('logo', 'options');
+    $sticky_logo = get_field('sticky_logo', 'options');
     ?>
 
     <header class="header">
@@ -78,7 +79,10 @@
                         <?php endif; ?>
                     </div>
 
-                    <a class="middle-logo" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    <div class="logo-area">
+                        <a class="middle-logo not-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                        <a class="middle-logo in-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $sticky_logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    </div>
                     <!-- / Logo  -->
 
                     <div class="header_right-menu">

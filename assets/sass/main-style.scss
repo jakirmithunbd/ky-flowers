@@ -462,8 +462,14 @@ button {
             padding: 0;
         }
 
+        .logo-area {
+            height: 80px;
+            overflow: hidden;
+        }
+
         .middle-logo {
             display: block;
+            transition: all .3s ease;
 
             img {
                 max-width: 100%;
@@ -675,12 +681,26 @@ button {
 
     &.sticky {
         padding: 2px 0;
-        background: #000;
+        background: #2C241C;
         -webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
         -moz-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
-        -ms-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
+        -ms-box-shadow: 0 0px 12px rgba(87, 49, 49, 0.16);
         -o-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.20);
+
+        .navbar-wrapper {
+    
+            .logo-area {
+
+                .not-sticky {
+                    transform: translateY(-70px);
+                }
+
+                .in-sticky {
+                    transform: translateY(-60px);
+                }
+            }
+        }
 
         .middle-logo {
             
@@ -890,7 +910,6 @@ button {
             justify-content: space-between;
 
             .banner-content {
-                padding: 0 15px;
                 position: relative;
                 z-index: 100;
                 max-width: 580px;
