@@ -1133,6 +1133,23 @@ button:hover, button:focus, button:active:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.header .logo-area {
+  height: 80px;
+  overflow: hidden;
+}
+.header .middle-logo {
+  display: block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header .middle-logo img {
+  max-width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
 .header .navbar-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1146,23 +1163,6 @@ button:hover, button:focus, button:active:focus {
 }
 .header .navbar-wrapper .navbar-collapse {
   padding: 0;
-}
-.header .navbar-wrapper .logo-area {
-  height: 80px;
-  overflow: hidden;
-}
-.header .navbar-wrapper .middle-logo {
-  display: block;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.header .navbar-wrapper .middle-logo img {
-  max-width: 100%;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  margin: 0 auto;
 }
 .header .navbar-wrapper .header_right-menu {
   display: -webkit-box;
@@ -1338,12 +1338,12 @@ button:hover, button:focus, button:active:focus {
   -o-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16);
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.2);
 }
-.header.sticky .navbar-wrapper .logo-area .not-sticky {
+.header.sticky .logo-area .not-sticky {
   -webkit-transform: translateY(-70px);
       -ms-transform: translateY(-70px);
           transform: translateY(-70px);
 }
-.header.sticky .navbar-wrapper .logo-area .in-sticky {
+.header.sticky .logo-area .in-sticky {
   -webkit-transform: translateY(-60px);
       -ms-transform: translateY(-60px);
           transform: translateY(-60px);
@@ -4806,9 +4806,18 @@ Cart Page
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-
   .header.sticky .navbar .navbar-header img {
     max-width: 70%;
+  }
+  .header.sticky .logo-area .not-sticky {
+    -webkit-transform: translateY(-70px);
+        -ms-transform: translateY(-70px);
+            transform: translateY(-70px);
+  }
+  .header.sticky .logo-area .in-sticky {
+    -webkit-transform: translateY(-41px);
+        -ms-transform: translateY(-41px);
+            transform: translateY(-41px);
   }
 
   .navbar-header {
@@ -4827,6 +4836,23 @@ Cart Page
   }
   .navbar-header:before, .navbar-header:after {
     content: none;
+  }
+  .navbar-header .logo-area {
+    height: 80px;
+    overflow: hidden;
+  }
+  .navbar-header .middle-logo {
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .navbar-header .middle-logo img {
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin: 0 auto;
   }
 
   .navbar-collapse.collapse {

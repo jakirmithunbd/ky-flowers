@@ -30,8 +30,10 @@
             <div class="container">
 
                 <div class="navbar-header hidden">
-                    <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
-                    <!-- / Logo  -->
+                    <div class="logo-area">
+                        <a class="middle-logo not-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                        <a class="middle-logo in-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $sticky_logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    </div>
 
                     <a href="#sidr" class="openMenu navbar-toggle collapsed">
                         <span class="fas fa-bars"></span>

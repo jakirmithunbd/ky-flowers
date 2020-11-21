@@ -22,6 +22,7 @@
     <?php 
     $queried_object = get_queried_object();
     $logo = get_field('logo', 'options');
+    $sticky_logo = get_field('sticky_logo', 'options');
     ?>
 
     <header class="header">
@@ -29,8 +30,10 @@
             <div class="container">
 
                 <div class="navbar-header hidden">
-                    <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
-                    <!-- / Logo  -->
+                    <div class="logo-area">
+                        <a class="middle-logo not-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                        <a class="middle-logo in-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $sticky_logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    </div>
 
                     <a href="#sidr" class="openMenu navbar-toggle collapsed">
                         <span class="fas fa-bars"></span>
@@ -78,7 +81,10 @@
                         <?php endif; ?>
                     </div>
 
-                    <a class="middle-logo" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    <div class="logo-area">
+                        <a class="middle-logo not-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                        <a class="middle-logo in-sticky" href="<?php echo site_url(); ?>"><img src="<?php echo $sticky_logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                    </div>
                     <!-- / Logo  -->
 
                     <div class="header_right-menu">
@@ -91,6 +97,7 @@
 
                                 if ( is_user_logged_in() ) : ?>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e( 'My Account', 'ky' ); ?></a>
+                                <a href="<?php echo site_url( ); ?>/my-account/customer-logout/"><?php _e('Log Out', 'ky'); ?></a>
                                 <?php else: ?>
                                 <a href="<?php echo site_url( ); ?>/login"><?php _e( 'Login', 'ky' ); ?></a>
                                 <a href="<?php echo site_url( ); ?>/registration"><?php _e( 'Registration', 'ky' ); ?></a>
@@ -121,19 +128,4 @@
             </div>
         </nav><!-- / navigation  -->
     </header><!-- / Header Area  -->
-
-
-<?php
-$bg = get_field('shop_page_backgorund', get_the_ID()) ? get_field('shop_page_backgorund', get_the_ID()) : get_theme_file_uri( '/assets/images/shop-banner-bg.jpg' ); 
- 
-?>
-<section class="page-banner woocommerce-page-title" style="background: url(<?php echo $bg; ?>);">
-    <div class="container">
-        <div class="col-md-12">
-            <div class="section-title text-center">
-                <h2 class="wow fadeInUp"><?php woocommerce_page_title(); ?></h2>
-            </div>
-        </div>
-    </div>
-</section>
     

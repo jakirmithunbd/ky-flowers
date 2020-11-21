@@ -71,9 +71,6 @@
                 }
             }
         }
-    }
-
-    .header {
 
         &.sticky {
 
@@ -84,6 +81,17 @@
                     img {
                         max-width: 70%;
                     }
+                }
+            }
+
+            .logo-area {
+
+                .not-sticky {
+                    transform: translateY(-70px);
+                }
+    
+                .in-sticky {
+                    transform: translateY(-41px);
                 }
             }
         }
@@ -99,6 +107,22 @@
 
         &:before, &:after {
             content: none;
+        }
+
+        .logo-area {
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .middle-logo {
+            display: block;
+            transition: all .3s ease;
+
+            img {
+                max-width: 100%;
+                transition: all .3s ease;
+                margin: 0 auto;
+            }
         }
     }
 
