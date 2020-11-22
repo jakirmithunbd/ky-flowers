@@ -454,8 +454,13 @@ button {
     transition: all .3s ease;
 
     .logo-area {
-        height: 80px;
-        overflow: hidden;
+        // height: 80px;
+        // overflow: hidden;
+
+        .in-sticky {
+            // transform: translateY(-70px);
+            display: none;
+        }
     }
 
     .middle-logo {
@@ -691,11 +696,11 @@ button {
         .logo-area {
 
             .not-sticky {
-                transform: translateY(-70px);
+                display: none;
             }
 
             .in-sticky {
-                transform: translateY(-60px);
+                display: block;
             }
         }
         

@@ -1133,9 +1133,8 @@ button:hover, button:focus, button:active:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.header .logo-area {
-  height: 80px;
-  overflow: hidden;
+.header .logo-area .in-sticky {
+  display: none;
 }
 .header .middle-logo {
   display: block;
@@ -1339,14 +1338,10 @@ button:hover, button:focus, button:active:focus {
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.2);
 }
 .header.sticky .logo-area .not-sticky {
-  -webkit-transform: translateY(-70px);
-      -ms-transform: translateY(-70px);
-          transform: translateY(-70px);
+  display: none;
 }
 .header.sticky .logo-area .in-sticky {
-  -webkit-transform: translateY(-60px);
-      -ms-transform: translateY(-60px);
-          transform: translateY(-60px);
+  display: block;
 }
 .header.sticky .middle-logo img {
   max-width: 80%;
@@ -4651,6 +4646,19 @@ Cart Page
   font-family: "Prata", serif;
   font-size: 1.125rem;
   line-height: 1.5555555556;
+  position: relative;
+}
+.shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_head h3:after {
+  position: absolute;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #2C241C;
+  font-size: 1rem;
+  margin-left: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .bapf_sfilter {
   margin-bottom: 0;
@@ -4668,6 +4676,11 @@ Cart Page
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5625;
+}
+.shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .Show_items .bapf_head h3:after {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 .shop-page-wrapper .shop-sidebar .berocket_single_filter_widget .Show_items .bapf_body {
   height: inherit;
@@ -4801,6 +4814,9 @@ Cart Page
     padding-top: 7px;
   }
 
+  .header .navbar .logo-area .in-sticky {
+    display: none;
+  }
   .header .navbar .navbar-header img {
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -4810,14 +4826,10 @@ Cart Page
     max-width: 70%;
   }
   .header.sticky .logo-area .not-sticky {
-    -webkit-transform: translateY(-70px);
-        -ms-transform: translateY(-70px);
-            transform: translateY(-70px);
+    display: none;
   }
   .header.sticky .logo-area .in-sticky {
-    -webkit-transform: translateY(-41px);
-        -ms-transform: translateY(-41px);
-            transform: translateY(-41px);
+    display: block;
   }
 
   .navbar-header {
@@ -4836,10 +4848,6 @@ Cart Page
   }
   .navbar-header:before, .navbar-header:after {
     content: none;
-  }
-  .navbar-header .logo-area {
-    height: 80px;
-    overflow: hidden;
   }
   .navbar-header .middle-logo {
     display: block;

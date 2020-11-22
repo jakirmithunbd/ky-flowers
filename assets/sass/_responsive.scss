@@ -64,6 +64,13 @@
 
         .navbar {
 
+            .logo-area {
+
+                .in-sticky {
+                    display: none;
+                }
+            }
+
             .navbar-header {
 
                 img {
@@ -87,11 +94,11 @@
             .logo-area {
 
                 .not-sticky {
-                    transform: translateY(-70px);
+                    display: none;
                 }
     
                 .in-sticky {
-                    transform: translateY(-41px);
+                    display: block;
                 }
             }
         }
@@ -107,11 +114,6 @@
 
         &:before, &:after {
             content: none;
-        }
-
-        .logo-area {
-            height: 80px;
-            overflow: hidden;
         }
 
         .middle-logo {

@@ -2727,6 +2727,18 @@ Cart Page
                     margin-bottom: 15px;
                     font-family: $prata;
                     @include em(18px, 28px);
+                    position: relative;
+
+                    &:after {
+                        position: absolute;
+                        content: "\f078";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        color: #2C241C;
+                        font-size: 1rem;
+                        margin-left: 10px;
+                        transition: all .3s ease;
+                    }
                 }
             }
 
@@ -2755,6 +2767,16 @@ Cart Page
             }
 
             .Show_items {
+
+                .bapf_head {
+    
+                    h3 {
+    
+                        &:after {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
 
                 .bapf_body {
                     height: inherit;
