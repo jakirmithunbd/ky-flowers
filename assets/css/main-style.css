@@ -1669,16 +1669,16 @@ button:hover, button:focus, button:active:focus {
   margin-bottom: 30px;
 }
 .product-category .category-list .category .cat-title {
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: 0 0;
-      -ms-transform-origin: 0 0;
-          transform-origin: 0 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: 20px 0;
+      -ms-transform-origin: 20px 0;
+          transform-origin: 20px 0;
   color: #2C241C;
   font-size: 1.125rem;
   line-height: 1.3888888889;
-  bottom: 0;
+  top: 20px;
   left: 0;
   position: absolute;
 }

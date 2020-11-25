@@ -1036,11 +1036,11 @@ button {
             margin-bottom: 30px;
 
             .cat-title {
-                transform: rotate(-90deg);
-                transform-origin: 0 0;
+                transform: rotate(90deg);
+                transform-origin: 20px 0;
                 color: #2C241C;
                 @include em(18px, 25px);
-                bottom: 0;
+                top: 20px;
                 left: 0;
                 position: absolute;
             }
