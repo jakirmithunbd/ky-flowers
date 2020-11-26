@@ -23,10 +23,10 @@
     .home-slider-wrapper {
 
         .home-banner {
-            height: 700px;
+            height: 800px;
 
             .banner-content-wrapper {
-                padding-top: 150px;
+                // padding-top: 150px;
                 margin-bottom: 50px;
             }
         }
@@ -293,6 +293,21 @@
         }
     }
 
+    .home-slider-wrapper {
+
+        .home-banner {
+            height: 730px;
+        }
+
+        .counter-wrapper {
+            bottom: 30px;
+
+            .slider-arrows-counter {
+                padding: 0 30px;
+            }
+        }
+    }
+
     .follow-us {
         padding: 60px 0;
     }
@@ -347,10 +362,10 @@
     .home-slider-wrapper {
 
         .home-banner {
-            height: auto;
+            height: 600px;
 
             .banner-content-wrapper {
-                padding-top: 230px;
+                padding-top: 50px;
 
                 .banner-content {
 
@@ -573,34 +588,40 @@
         padding: 40px 0 !important;
     }
 
-    .home-banner {
+    .home-slider-wrapper {
 
-        .banner-content-wrapper {
-
-            .banner-content {
-                padding: 0;
-                margin-bottom: 30px;
-
-                .buttons {
-
-                    .btn {
-
-                        &:last-child {
-                            margin-left: 0px;
+        .home-banner {
+            height: 650px;
+    
+            .banner-content-wrapper {
+                flex-wrap: wrap;
+    
+                .banner-content {
+                    padding-top: 100px;
+    
+                    .buttons {
+    
+                        .btn {
+    
+                            &:last-child {
+                                margin-left: 10px;
+                            }
                         }
                     }
                 }
-            }
-
-            .delivery-box {
-
-                .content {
-                    margin: 0 !important;
-                    height: auto !important;
-                }
-
-                .occasions {
-                    margin-bottom: 30px;
+    
+                .delivery-box {
+                    margin-top: 30px;
+    
+                    .content {
+                        margin: 0 !important;
+                        height: auto !important;
+                    }
+    
+                    .occasions {
+                        margin-bottom: 30px;
+                        font-size: 2rem;
+                    }
                 }
             }
         }
@@ -820,6 +841,20 @@
 
         p {
             font-size: 1rem;
+        }
+    }
+
+    .home-slider-wrapper {
+
+        .counter-wrapper {
+
+            .slider-arrows-counter {
+                padding: 0 15px;
+
+                .news__counter {
+                    font-size: 2.125rem;
+                }
+            }
         }
     }
 

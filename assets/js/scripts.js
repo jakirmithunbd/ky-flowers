@@ -157,7 +157,7 @@ $("document").on("click",function(e) { $.sidr('close','sidr-main'); });
         draggable: true,
         slidesToShow: 1,
         autoplay: true,
-        adaptiveHeight: true,
+        // adaptiveHeight: true,
         slidesToScroll: 1,
         fade: true,
         arrows: true,

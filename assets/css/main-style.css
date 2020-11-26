@@ -1543,8 +1543,6 @@ button:hover, button:focus, button:active:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -4780,10 +4778,9 @@ Cart Page
 }
 @media only screen and (max-width: 1199px) {
   .home-slider-wrapper .home-banner {
-    height: 700px;
+    height: 800px;
   }
   .home-slider-wrapper .home-banner .banner-content-wrapper {
-    padding-top: 150px;
     margin-bottom: 50px;
   }
 
@@ -4997,6 +4994,16 @@ Cart Page
     margin: 0 auto;
   }
 
+  .home-slider-wrapper .home-banner {
+    height: 730px;
+  }
+  .home-slider-wrapper .counter-wrapper {
+    bottom: 30px;
+  }
+  .home-slider-wrapper .counter-wrapper .slider-arrows-counter {
+    padding: 0 30px;
+  }
+
   .follow-us {
     padding: 60px 0;
   }
@@ -5035,10 +5042,10 @@ Cart Page
 }
 @media only screen and (max-width: 992px) {
   .home-slider-wrapper .home-banner {
-    height: auto;
+    height: 600px;
   }
   .home-slider-wrapper .home-banner .banner-content-wrapper {
-    padding-top: 230px;
+    padding-top: 50px;
   }
   .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content p {
     font-size: 1.7rem;
@@ -5177,19 +5184,29 @@ Cart Page
     padding: 40px 0 !important;
   }
 
-  .home-banner .banner-content-wrapper .banner-content {
-    padding: 0;
-    margin-bottom: 30px;
+  .home-slider-wrapper .home-banner {
+    height: 650px;
   }
-  .home-banner .banner-content-wrapper .banner-content .buttons .btn:last-child {
-    margin-left: 0px;
+  .home-slider-wrapper .home-banner .banner-content-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  .home-banner .banner-content-wrapper .delivery-box .content {
+  .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content {
+    padding-top: 100px;
+  }
+  .home-slider-wrapper .home-banner .banner-content-wrapper .banner-content .buttons .btn:last-child {
+    margin-left: 10px;
+  }
+  .home-slider-wrapper .home-banner .banner-content-wrapper .delivery-box {
+    margin-top: 30px;
+  }
+  .home-slider-wrapper .home-banner .banner-content-wrapper .delivery-box .content {
     margin: 0 !important;
     height: auto !important;
   }
-  .home-banner .banner-content-wrapper .delivery-box .occasions {
+  .home-slider-wrapper .home-banner .banner-content-wrapper .delivery-box .occasions {
     margin-bottom: 30px;
+    font-size: 2rem;
   }
 
   .most-popular-product .home-product-slider .sliders-wrapper .product-images-slider .product-info-slider {
@@ -5333,6 +5350,13 @@ Cart Page
   }
   .section-title p {
     font-size: 1rem;
+  }
+
+  .home-slider-wrapper .counter-wrapper .slider-arrows-counter {
+    padding: 0 15px;
+  }
+  .home-slider-wrapper .counter-wrapper .slider-arrows-counter .news__counter {
+    font-size: 2.125rem;
   }
 
   .why-choose-us {
