@@ -88,6 +88,7 @@ function ky_before_woocommerce_before_shop_loop() {
                     }
                         
                     echo '</select>
+                    
                 </div> <div class="tab-content products"><div class="row">';
 }
 
@@ -201,6 +202,7 @@ function ky_woocommerce_template_single_excerpt() {
                 </select>
             </div>
         </div>
+        
 
     <?php
 

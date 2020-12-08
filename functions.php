@@ -328,3 +328,115 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
     $defaults['delimiter'] = ' &gt;&gt; ';
     return $defaults;
 }
+
+
+
+
+
+
+
+
+// Display custom field on single product page
+function d_extra_product_field(){
+  $value = isset( $_POST['customer_gift_message'] ) ? sanitize_text_field( $_POST['customer_gift_message'] ) : '';
+  printf( '<label style="margin-bottom: 10px; font-weight: 400; ">%s</label><textarea style="margin-bottom: 30px; " name="customer_gift_message" placeholder="Message" id="" cols="10" rows="4">%s</textarea>', __( 'Gift message' ), esc_attr( $value ) );
+}
+add_action( 'woocommerce_before_add_to_cart_button', 'd_extra_product_field', 9 );
+
+// validate when add to cart
+function d_extra_field_validation($passed, $product_id, $qty){
+
+  if( isset( $_POST['customer_gift_message'] ) && sanitize_text_field( $_POST['customer_gift_message'] ) == '' ){
+      $product = wc_get_product( $product_id );
+      wc_add_notice( sprintf( __( '%s cannot be added to the cart until you enter some text.' ), $product->get_title() ), 'error' );
+      return false;
+  }
+
+  return $passed;
+
+}
+add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10, 3 );
+
+// add custom field data in to cart
+function d_add_cart_item_data( $cart_item, $product_id ){
+
+  if( isset( $_POST['customer_gift_message'] ) ) {
+      $cart_item['customer_gift_message'] = sanitize_text_field( $_POST['customer_gift_message'] );
+  }
+
+  return $cart_item;
+
+}
+add_filter( 'woocommerce_add_cart_item_data', 'd_add_cart_item_data', 10, 2 );
+
+// load data from session
+function d_get_cart_data_f_session( $cart_item, $values ) {
+
+  if ( isset( $values['customer_gift_message'] ) ){
+      $cart_item['customer_gift_message'] = $values['customer_gift_message'];
+  }
+
+  return $cart_item;
+
+}
+add_filter( 'woocommerce_get_cart_item_from_session', 'd_get_cart_data_f_session', 20, 2 );
+
+
+//add meta to order
+function d_add_order_meta( $item_id, $values ) {
+
+  if ( ! empty( $values['customer_gift_message'] ) ) {
+      woocommerce_add_order_item_meta( $item_id, 'customer_gift_message', $values['customer_gift_message'] );           
+  }
+}
+add_action( 'woocommerce_add_order_item_meta', 'd_add_order_meta', 10, 2 );
+
+// display data in cart
+function d_get_itemdata( $other_data, $cart_item ) {
+
+  if ( isset( $cart_item['customer_gift_message'] ) ){
+
+      $other_data[] = array(
+          'name' => __( 'Gift message' ),
+          'value' => sanitize_text_field( $cart_item['customer_gift_message'] )
+      );
+
+  }
+
+  return $other_data;
+
+}
+add_filter( 'woocommerce_get_item_data', 'd_get_itemdata', 10, 2 );
+
+
+// display custom field data in order view
+function d_dis_metadata_order( $cart_item, $order_item ){
+
+  if( isset( $order_item['customer_gift_message'] ) ){
+      $cart_item_meta['customer_gift_message'] = $order_item['customer_gift_message'];
+  }
+
+  return $cart_item;
+
+}
+add_filter( 'woocommerce_order_item_product', 'd_dis_metadata_order', 10, 2 );
+
+
+// add field data in email
+function d_order_email_data( $fields ) { 
+  $fields['customer_gift_message'] = __( 'Gift message ' ); 
+  return $fields; 
+} 
+add_filter('woocommerce_email_order_meta_fields', 'd_order_email_data');
+
+// again order
+function d_order_again_meta_data( $cart_item, $order_item, $order ){
+
+  if( isset( $order_item['customer_gift_message'] ) ){
+      $cart_item_meta['customer_gift_message'] = $order_item['customer_gift_message'];
+  }
+
+  return $cart_item;
+
+}
+add_filter( 'woocommerce_order_again_cart_item_data', 'd_order_again_meta_data', 10, 3 );
